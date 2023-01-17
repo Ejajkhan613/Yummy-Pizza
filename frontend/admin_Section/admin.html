@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Yummy Pizza</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./admin_login/logo.png" />
+  </head>
+  <body>
+    <div id="cont">
+      <!-- Side Navbar Section -->
+      <div class="sidebar">
+        <button id="userDetails">User Details</button>
+        <button>Admin Details</button>
+        <button>Users Address</button>
+        <button>Products</button>
+      </div>
+
+      <!-- Dashboard Section -->
+      <div id="header">
+        <img src="./admin_login/logo.png" alt="logo" />
+        <div id="title">
+          <h1>Admin Panel</h1>
+        </div>
+        <div id="user">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="#64C5B1"
+            class="bi bi-person-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+            />
+          </svg>
+          <p id="showUser"></p>
+        </div>
+      </div>
+    </div>
+    <script src="./admin.js"></script>
+  </body>
+</html>
