@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy Pizza | Delivering Smile</title>
+    <link rel="icon" type="image/x-icon" href="./login/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Top Section -->
+    <div id="top">
+      <div id="logo">
+        <div id="img">
+          <img src="../login/logo.png" alt="logo" />
+        </div>
+        <div id="name">
+          <h1>Yummy Pizza</h1>
+        </div>
+      </div>
+      <div id="right">
+
+        <!-- User Details Section -->
+        <div id="user">
+          <img src="../avatar.svg" alt="avatar" />
+          <p id="username">Ejajul Ansari</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Main Body -->
+     
+      <!-- Container Section -->
+      <div id="container">
+          <div id="leftSec">
+            <div id="leftTop">
+                <p>Payment Method</p>
+                <div>
+                    <button>CREDIT CARD</button>
+                    <button>DEBIT CARD</button>
+                </div>
+            </div>
+
+            <div id="mainSec">
+                <div id="noItem">
+                    <img src="../svg/cod_image.png" alt="cash_on_delivery">
+                    <h1>IF YOU WISH TO PAY <br>THROUGH CASH</h1>
+                    <button>CONFIRM ORDER</button>
+                </div>
+
+                <div id="creditCard">
+                    <div class="title">
+                        <h3>Pay using Credit Card</h3>
+                        <img src="../svg/credit-card-svgrepo-com.svg" alt="credit_card">
+                    </div>
+                    <input type="text" id="card_number" placeholder="CREDIT CARD NO">
+                    <select id="month">
+                        <option value="">MM</option>
+                        <option value="1">2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="year">
+                        <option value="">YY</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                    </select>
+                    <input type="text" id="name" placeholder="NAME ON CARD">
+                    <input type="text" id="cvv" placeholder="CVV">
+                    <button>PAY NOW</button>
+                </div>
+
+                <div id="debitCard">
+                    <div class="title">
+                        <h3>Pay using Debit Card</h3>
+                        <img src="../svg/credit-card-svgrepo-com.svg" alt="debit_card">
+                    </div>
+                    <input type="text" id="card_number" placeholder="DEBIT CARD NO">
+                    <select id="month">
+                        <option value="">MM</option>
+                        <option value="1">2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="year">
+                        <option value="">YY</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                    </select>
+                    <input type="text" id="name" placeholder="NAME ON CARD">
+                    <input type="text" id="cvv" placeholder="CVV">
+                    <button>PAY NOW</button>
+                </div>
+
+                <!-- payment done -->
+                <div id="paymentDone">
+                    <div id="makeCenter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#0066A7" class="bi bi-bank" viewBox="0 0 16 16">
+                            <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                          </svg>
+                    </div>
+                    <h1>Payment Done</h1>
+                    <p>We are Processing your Order</p>
+                    <a href="../index.html"><button>Go To Menu</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightSec">
+            <!-- Address Section -->
+            <div id="addressSec">
+                <p>Delivery Address</p>
+                <div>
+                    <img src="../svg/location_pin.png" alt="location_pin">
+                    <span>CURRENT ADDRESS</span>
+                    <p id="addressShow"> Ratiya marg, Sangam Vihar</p>
+                </div>
+            </div>
+            
+            
+            <!-- Price Section -->
+            <div id="priceSec">
+                <p>Order Details</p>
+                <div>
+                    <div id="subtotal">
+                        <p>Sub Total</p>
+                        <span>$ 0.00</span>
+                    </div>
+
+                    <div id="discounts">
+                        <p>Discount</p>
+                        <span>-</span>
+                    </div>
+
+                    <div id="taxes">
+                        <p>Taxes and Charges</p>
+                        <span>$ 0.00</span>
+                    </div>
+
+                    <div id="total">
+                        <p>Grand Total</p>
+                        <span>$ 0.00</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <div id="footer">
+        <div id="footertop">
+            <div id="footertopleft">
+                <img src="../login/logo.png" alt="logo">
+                <h1>Yummy Pizza</h1>
+            </div>
+            <p>Perfect Slice, perfect Price</p>
+        </div>
+        <div id="footerbottom">
+            <p>All Rights Reserved. Copyright © Yummy Pizza Ltd. ( Ejajul Ansari )</p>
+        </div>
+    </div>
+  </body>
+</html>
