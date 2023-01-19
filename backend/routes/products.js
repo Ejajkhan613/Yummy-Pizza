@@ -20,8 +20,9 @@ productRoute.use(express.json());
 
 // GET Product Details Route
 productRoute.get("/", async (req, res) => {
+    let categ = req.query.category;
     try {
-        let data = await ProductModel.find();
+        let data = await ProductModel.find({ "category": categ });
         res.send(data);
     } catch (error) {
         res.send([{ "message": "Something Went Wrong" }]);

@@ -19,7 +19,7 @@ addressRoute.use(express.json());
 // For Users
 // GET Address Details Route
 addressRoute.get("/get", async (req, res) => {
-    let { username } = req.body;
+    let { username } = req.headers;
     try {
         let data = await AddressModel.find({ "username": username });
         res.send(data);
