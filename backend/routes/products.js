@@ -36,7 +36,7 @@ productRoute.get("/", async (req, res) => {
 // Only for Admin Purpose
 
 // Add new Product Details
-productRoute.post("/add", (req, res) => {
+productRoute.post("/add", async (req, res) => {
     let token = req.headers.authorization;
     jwt.verify(token, secretKey, async (err, decoded) => {
         if (decoded) {
@@ -58,7 +58,7 @@ productRoute.post("/add", (req, res) => {
 
 
 // Update Product Detail
-productRoute.patch("/update", (req, res) => {
+productRoute.patch("/update", async (req, res) => {
     let { _id } = req.body;
     let token = req.headers.authorization;
     jwt.verify(token, secretKey, async (err, decoded) => {
@@ -79,8 +79,9 @@ productRoute.patch("/update", (req, res) => {
 })
 
 
+
 // delete Product Detail
-productRoute.delete("/delete", (req, res) => {
+productRoute.delete("/delete",  async(req, res) => {
     let { _id } = req.body;
     let token = req.headers.authorization;
     jwt.verify(token, secretKey, async (err, decoded) => {

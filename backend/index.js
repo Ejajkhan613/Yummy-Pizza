@@ -12,6 +12,7 @@ const { adminRoute } = require("./routes/admin");
 const { addressRoute } = require("./routes/address");
 const { productRoute } = require("./routes/products");
 const { userRoute } = require("./routes/users");
+const { cartRoute } = require("./routes/cart");
 
 
 // port number
@@ -44,6 +45,9 @@ app.use("/admin", adminRoute)
 // Address Route
 app.use("/address", addressRoute);
 
+
+// Cart Route
+app.use("/cart", cartRoute)
 
 // Products Route
 app.use("/products", productRoute)

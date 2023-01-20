@@ -194,7 +194,7 @@ body {
 
 
 .description {
-    width: 320px;
+    width: 300px;
     margin-left: 10px;
 }
 
@@ -216,24 +216,37 @@ body {
     font-size: 12px;
 }
 
+.rightside>p {
+    text-align: center;
+    font-weight: 600;
+    color: #0066A7;
+}
+
 .changePrice {
     height: 20px;
-    margin-right: 10px;
     width: 80px;
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: 30px;
 }
 
-.changePrice>span {
-    border-left: 1px solid rgb(186, 186, 186);
-    border-right: 1px solid rgb(186, 186, 186);
-    font-weight: 600;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    text-align: center;
+.number>span {
+    margin: 0px 20px;
 }
 
+
+.changePrice>div>button {
+    padding: 3px 10px;
+    background-color: #74b91a;
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    font-size: large;
+}
+
+.changePrice>div>button:hover {
+    background-color: #91c949;
+}
 
 
 
@@ -271,7 +284,8 @@ body {
 
 #addressSec>p {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 600;
     margin: 0px;
 }
 
@@ -309,6 +323,10 @@ body {
     background-color: #65AB0B;
     border: 0px;
     border-radius: 5px;
+}
+
+#addressSec>div>button:hover {
+    background-color: #91c949;
 }
 
 
@@ -358,6 +376,10 @@ body {
     background-color: #65AB0B;
     border: 0px;
     border-radius: 5px;
+}
+
+#offerBottom>button:hover {
+    background-color: #91c949;
 }
 
 
@@ -483,6 +505,10 @@ body {
     border-radius: 3px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#placeOrder>button:hover {
+    background-color: #91c949;
 }
 
 
