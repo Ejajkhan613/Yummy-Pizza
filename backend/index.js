@@ -13,6 +13,8 @@ const { addressRoute } = require("./routes/address");
 const { productRoute } = require("./routes/products");
 const { userRoute } = require("./routes/users");
 const { cartRoute } = require("./routes/cart");
+const { discountRoute } = require("./routes/discounts");
+const { orderRoute } = require("./routes/orderHistory");
 
 
 // port number
@@ -51,6 +53,12 @@ app.use("/cart", cartRoute)
 
 // Products Route
 app.use("/products", productRoute)
+
+// Discount Route
+app.use("/discount", discountRoute)
+
+// OrderHistory
+app.use("/orderHistory", orderRoute)
 
 
 // Starting server and connecting to the MongoDB

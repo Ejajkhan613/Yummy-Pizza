@@ -26,24 +26,6 @@ const userRoute = express.Router();
 userRoute.use(express.json());
 
 
-// GET All User Details (Only for Admin Purpose)
-userRoute.get("/show", (req, res) => {
-    let token = req.headers.authorization;
-    jwt.verify(token, secretKey, async (err, decoded) => {
-        if (decoded) {
-            let data = await AdminModel.find({ "email": decoded.email });
-            if (data.length == 1) {
-                if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
-                    res.send(data);
-                } else {
-                    res.send([{ "message": "Not Authorized" }]);
-                }
-            }
-        } else {
-            res.send([{ "message": "Not Authorized" }]);
-        }
-    });
-})
 
 
 // Users Registration Route
@@ -102,6 +84,10 @@ userRoute.post("/login", async (req, res) => {
 
 
 
+
+
+
+
 // Only for Admin Purpose
 
 // show User Detail
@@ -125,6 +111,31 @@ userRoute.get("/admin/show", (req, res) => {
 })
 
 
+
+// Find User Detail by ID
+userRoute.get("/admin/find", (req, res) => {
+    let token = req.headers.authorization;
+    let id = req.headers.id;
+    jwt.verify(token, secretKey, async (err, decoded) => {
+        if (decoded) {
+            let data = await AdminModel.find({ "email": decoded.email });
+            if (data.length == 1) {
+                if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
+                    let showUsers = await UsersModel.findById({"_id": id});
+                    res.send([{"message": "found"},showUsers]);
+                } else {
+                    res.send([{ "message": "Not Authorized" }]);
+                }
+            }
+        } else {
+            res.send([{ "message": "Not Authorized" }]);
+        }
+    });
+})
+
+
+
+
 // Add User Detail
 userRoute.post("/admin/add", (req, res) => {
     let token = req.headers.authorization;
@@ -143,7 +154,53 @@ userRoute.post("/admin/add", (req, res) => {
             res.send([{ "message": "Not Authorized" }]);
         }
     });
-})
+});
+
+
+
+// Update User Detail
+userRoute.patch("/admin/update", (req, res) => {
+    let token = req.headers.authorization;
+    let id = req.headers.id;
+    let payload = req.body;
+    jwt.verify(token, secretKey, async (err, decoded) => {
+        if (decoded) {
+            let data = await AdminModel.find({ "email": decoded.email });
+            if (data.length == 1) {
+                if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
+                    await UsersModel.findByIdAndUpdate({ "_id": id }, payload);
+                    res.send([{ "message": "User Updated" }]);
+                } else {
+                    res.send([{ "message": "Not Authorized" }]);
+                }
+            }
+        } else {
+            res.send([{ "message": "Not Authorized" }]);
+        }
+    });
+});
+
+
+// Delete User Detail
+userRoute.delete("/admin/delete", (req, res) => {
+    let token = req.headers.authorization;
+    let id = req.headers.id;
+    jwt.verify(token, secretKey, async (err, decoded) => {
+        if (decoded) {
+            let data = await AdminModel.find({ "email": decoded.email });
+            if (data.length == 1) {
+                if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
+                    await UsersModel.findByIdAndDelete({ "_id": id });
+                    res.send([{ "message": "User Deleted" }]);
+                } else {
+                    res.send([{ "message": "Not Authorized" }]);
+                }
+            }
+        } else {
+            res.send([{ "message": "Not Authorized" }]);
+        }
+    });
+});
 
 
 // Exporting userRoute
