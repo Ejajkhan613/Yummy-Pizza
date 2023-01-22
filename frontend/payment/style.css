@@ -1,0 +1,597 @@
+body {
+    margin: 0px;
+    font-family: poppins;
+    background-color: #F2F2F2;
+}
+
+#top {
+    height: 50px;
+    width: 100%;
+    /* position: fixed; */
+    background-color: #0066A7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+}
+
+#img>img {
+    width: 50px;
+}
+
+#name>h1 {
+    display: inline-flex;
+    color: white;
+    margin: 0px 0px;
+    margin-left: 10px;
+
+}
+
+#right {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-left: 1px solid white;
+    padding: 0px 10px;
+    height: 30px;
+}
+
+
+#user {
+    display: flex;
+    align-items: center;
+}
+
+#user>img {
+    width: 25px;
+}
+
+#username {
+    margin-right: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+
+
+
+
+#container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    height: fit-content;
+}
+
+#leftTop {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#leftTop>p {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0px;
+    display: inline-flex;
+}
+
+#leftTop>div>button {
+    padding: 10px 15px;
+    background-color: #65AB0B;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+}
+
+#leftTop>div>button:hover {
+    background-color: #83c72b;
+    cursor: pointer;
+}
+
+#leftTop>a {
+    margin-left: 400px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0066A7;
+}
+
+#leftTop>button {
+    padding: 10px 15px;
+    background-color: #65AB0B;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+}
+
+#leftTop>button:hover {
+    background-color: #83c72b;
+    cursor: pointer;
+}
+
+#leftSec {
+    width: 70%;
+    height: 20px;
+}
+
+
+
+
+#noItem {
+    display: none;
+}
+
+#creditCard {
+    display: none;
+}
+
+#debitCard {
+    display: none;
+}
+
+#paymentDone {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Main Body to show cart Products */
+
+#mainSec {
+    width: 100%;
+    margin-top: 20px;
+    height: 500px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+}
+
+
+/* showing this when payment done */
+
+#makeCenter {
+    width: 100%;
+    padding-top: 100px;
+}
+
+#makeCenter>svg {
+    margin-left: 350px;
+}
+
+#paymentDone>h1 {
+    text-align: center;
+    color: #0066A7;
+}
+
+#paymentDone>p {
+    text-align: center;
+    font-size: 19px;
+}
+
+#paymentDone>a>button {
+    margin-left: 335px;
+    background-color: #65AB0B;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 6px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 15px 30px;
+}
+
+#paymentDone>a>button:hover {
+    cursor: pointer;
+    background-color: #83c72b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* showing this for Debit Card */
+
+.title {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title>img {
+    width: 100px;
+    margin-left: 50px;
+}
+
+.title>h3 {
+    text-align: center;
+}
+
+#debitCard>input {
+    display: block;
+    width: 300px;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+#debitCard>select {
+    display: block;
+    width: 345px;
+    margin: auto;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+#debitCard>button {
+    margin-left: 360px;
+    background-color: #65AB0B;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 6px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 15px 30px;
+}
+
+#debitCard>button:hover {
+    cursor: pointer;
+    background-color: #83c72b;
+}
+
+
+
+
+
+
+/* showing this for credit card */
+
+.title {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title>img {
+    width: 100px;
+    margin-left: 50px;
+}
+
+.title>h3 {
+    text-align: center;
+}
+
+#creditCard>input {
+    display: block;
+    width: 300px;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+#creditCard>select {
+    display: block;
+    width: 345px;
+    margin: auto;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+#creditCard>button {
+    margin-left: 360px;
+    background-color: #65AB0B;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 6px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 15px 30px;
+}
+
+#creditCard>button:hover {
+    cursor: pointer;
+    background-color: #83c72b;
+}
+
+
+
+
+
+
+
+/* Showing this for Cash on Delivery */
+
+#noItem>img {
+    width: 140px;
+    display: inline-flex;
+    margin-left: 350px;
+    margin-top: 30px;
+}
+
+#noItem>h1 {
+    text-align: center;
+}
+
+#noItem>button {
+    margin-left: 315px;
+    background-color: #65AB0B;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 6px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 15px 30px;
+}
+
+#noItem>button:hover {
+    cursor: pointer;
+    background-color: #83c72b;
+}
+
+
+
+
+
+/* Right Section for discounts and prices */
+#rightSec {
+    width: 25%;
+    height: fit-content;
+}
+
+
+
+
+#addressSec {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+
+}
+
+#addressSec>p {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0px;
+}
+
+#addressSec>div {
+    width: 94%;
+    height: fit-content;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#addressSec>div>img {
+    width: 10px;
+}
+
+#addressSec>div>span {
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+#addressSec>div>p {
+    font-size: 10px;
+    margin-left: 15px;
+}
+
+#addressSec>div>button {
+    padding: 5px 10px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #65AB0B;
+    border: 0px;
+    border-radius: 5px;
+}
+
+
+
+
+
+#priceSec>p {
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+#priceSec>div {
+    width: 91%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+#subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#subtotal>p {
+    font-size: 13px;
+    margin-bottom: 13px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#subtotal>span {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+
+#discounts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#discounts>p {
+    font-size: 13px;
+    margin-bottom: 13px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#discounts>span {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    display: inline-flex;
+}
+
+
+
+#taxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taxes>p {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    margin-bottom: 13px;
+}
+
+#taxes>span {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    display: inline-flex;
+}
+
+
+
+#total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px;
+    border-top-style: dashed;
+    border-bottom-style: dashed;
+}
+
+#total>p {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#total>span {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#placeOrder>button {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: #82BB37;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* Footer Section */
+#footer {
+    background-color: #222E3A;
+    width: 100%;
+    height: 200px;
+    margin-top: 200px;
+    bottom: 0;
+}
+
+#footertop {
+    height: 150px;
+    width: 100%;
+
+}
+
+#footertopleft {
+    width: fit-content;
+    margin: auto;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footertopleft>img {
+    width: 100px;
+    margin: 0px 20px;
+}
+
+#footertopleft>h1 {
+    color: white;
+    font-size: 35px;
+}
+
+#footertop>p {
+    color: white;
+    margin-top: 0px;
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#footerbottom {
+    height: 50px;
+    background-color: #1A2735;
+    border-top: 1px dotted rgb(82, 98, 116);
+}
+
+#footerbottom>p {
+    text-align: center;
+    color: #54677A;
+    font-size: 14px;
+}

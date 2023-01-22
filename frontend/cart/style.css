@@ -1,0 +1,571 @@
+body {
+    margin: 0px;
+    font-family: poppins;
+    background-color: #F2F2F2;
+}
+
+#top {
+    height: 50px;
+    width: 100%;
+    /* position: fixed; */
+    background-color: #0066A7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+}
+
+#img>img {
+    width: 50px;
+}
+
+#name>h1 {
+    display: inline-flex;
+    color: white;
+    margin: 0px 0px;
+    margin-left: 10px;
+
+}
+
+#right {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-left: 1px solid white;
+    padding: 0px 10px;
+    height: 30px;
+}
+
+
+#user {
+    display: flex;
+    align-items: center;
+}
+
+#user>img {
+    width: 25px;
+}
+
+#username {
+    margin-right: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+
+
+
+
+#container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    height: fit-content;
+}
+
+#leftTop {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#leftTop>p {
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0px;
+    display: inline-flex;
+
+}
+
+#leftTop>a {
+    margin-left: 400px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0066A7;
+}
+
+#leftSec {
+    width: 70%;
+    height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Body to show cart Products */
+
+#mainSec {
+    width: 100%;
+    margin-top: 10px;
+    height: fit-content;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+}
+
+
+
+/* Showing this went no Item Present */
+#noItem {
+    display: none;
+}
+
+#noItem>img {
+    margin-left: 200px;
+}
+
+#noItem>h1 {
+    text-align: center;
+    margin-top: -90px;
+}
+
+#noItem>a>button {
+    margin-left: 350px;
+    background-color: #65AB0B;
+    color: white;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 10px 30px;
+}
+
+
+
+
+
+
+
+/* Showing This went item present */
+#showItem {
+    height: 600px;
+    overflow-y: scroll;
+    width: 100%;
+    display: block;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+}
+
+.individualItem {
+    height: fit-content;
+    width: auto;
+    border: 2px solid #0066A7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    background-color: white;
+}
+
+.leftside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSec {
+    width: fit-content;
+    height: fit-content;
+}
+
+.imgSec>img {
+    width: 110px;
+}
+
+
+.description {
+    width: 300px;
+    margin-left: 10px;
+}
+
+.description>h4 {
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.description>p {
+    margin: 0px;
+    font-size: 10px;
+}
+
+.sizeofitem {
+    margin: 0px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.rightside>p {
+    text-align: center;
+    font-weight: 600;
+    color: #0066A7;
+}
+
+.changePrice {
+    height: 20px;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.number>span {
+    margin: 0px 20px;
+}
+
+
+.changePrice>div>button {
+    padding: 3px 10px;
+    background-color: #74b91a;
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    font-size: large;
+}
+
+.changePrice>div>button:hover {
+    background-color: #91c949;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Right Section for discounts and prices */
+#rightSec {
+    width: 25%;
+    height: fit-content;
+}
+
+
+
+
+#addressSec {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+
+}
+
+#addressSec>p {
+    font-weight: 600;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+#addressSec>div {
+    width: 94%;
+    height: fit-content;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#addressSec>div>img {
+    width: 10px;
+}
+
+#addressSec>div>span {
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+#addressSec>div>p {
+    font-size: 10px;
+    margin-left: 15px;
+}
+
+#addressSec>div>button {
+    padding: 5px 10px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #65AB0B;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#addressSec>div>button:hover {
+    background-color: #91c949;
+}
+
+
+
+
+
+
+#offerSec {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+}
+
+
+#offerSec>div {
+    width: 94%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#offerSec>p {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#offerTop {
+    display: inline-flex;
+}
+
+#offerTop>img {
+    margin-right: 10px;
+}
+
+#offerBottom>input {
+    padding: 5px 10px;
+}
+
+#offerBottom>button {
+    padding: 5px 10px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #65AB0B;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#offerBottom>button:hover {
+    background-color: #91c949;
+}
+
+
+#offerBottom>p {
+    font-size: 10px;
+    margin-left: 6px;
+}
+
+
+
+
+
+
+
+
+
+#priceSec>p {
+    font-weight: 600;
+    font-size: 13px;
+
+}
+
+#priceSec>div {
+    width: 91%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+#subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#subtotal>p {
+    font-size: 13px;
+    margin-bottom: 13px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#subtotal>span {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+
+#discounts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#discounts>p {
+    font-size: 13px;
+    margin-bottom: 13px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#discounts>span {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    display: inline-flex;
+}
+
+
+
+#taxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taxes>p {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    margin-bottom: 13px;
+}
+
+#taxes>span {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    display: inline-flex;
+}
+
+
+
+#total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px;
+    border-top-style: dashed;
+    border-bottom-style: dashed;
+}
+
+#total>p {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#total>span {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+}
+
+#placeOrder>button {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: #82BB37;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#placeOrder>button:hover {
+    background-color: #91c949;
+}
+
+
+
+
+
+/* Footer Section */
+#footer {
+    background-color: #222E3A;
+    width: 100%;
+    height: 200px;
+    margin-top: 50px;
+    bottom: 0;
+}
+
+#footertop {
+    height: 150px;
+    width: 100%;
+
+}
+
+#footertopleft {
+    width: fit-content;
+    margin: auto;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footertopleft>img {
+    width: 100px;
+    margin: 0px 20px;
+}
+
+#footertopleft>h1 {
+    color: white;
+    font-size: 35px;
+}
+
+#footertop>p {
+    color: white;
+    margin-top: 0px;
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#footerbottom {
+    height: 50px;
+    background-color: #1A2735;
+    border-top: 1px dotted rgb(82, 98, 116);
+}
+
+#footerbottom>p {
+    text-align: center;
+    color: #54677A;
+    font-size: 14px;
+}

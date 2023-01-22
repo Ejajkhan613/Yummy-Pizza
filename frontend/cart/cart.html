@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy Pizza | Delivering Smile</title>
+    <link rel="icon" type="image/x-icon" href="../login/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Top Section -->
+    <div id="top">
+      <div id="logo">
+        <div id="img">
+          <img src="../login/logo.png" alt="logo" />
+        </div>
+        <div id="name">
+          <h1>Yummy Pizza</h1>
+        </div>
+      </div>
+      <div id="right">
+
+        <!-- User Details Section -->
+        <div id="user">
+          <img src="../svg/avatar.svg" alt="avatar" />
+          <p id="username"></p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Main Body -->
+     
+      <!-- Container Section -->
+      <div id="container">
+          <div id="leftSec">
+            <div id="leftTop">
+                <p></p>
+                <a href="../index.html">Explore Menu</a>
+            </div>
+
+            <div id="mainSec">
+
+                <!-- Showing this when don't have any added Item -->
+                <div id="noItem">
+                    <img src="../login/logo.png" alt="logo">
+                    <h1>No Items</h1>
+                    <a href="../index.html"><button>Add Items</button></a>
+                </div>
+
+                <!-- Show Cart Products here -->
+                <div id="showItem">
+                    <div id="itemList">
+                        <!-- Showing All Cart Items -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightSec">
+            <!-- Address Section -->
+            <div id="addressSec">
+                <p>Choose a delivery address</p>
+                <div>
+                    <img src="../svg/location_pin.png" alt="location_pin">
+                    <span>CURRENT ADDRESS</span>
+                    <p id="addressShow">Add Location</p>
+                    <button id="changeAddress">CHANGE</button>
+                </div>
+            </div>
+            
+            <!-- Offers Section -->
+            <div id="offerSec">
+                <p>Offers</p>
+                <div>
+                    <div id="offerTop">
+                        <img src="../svg/offer_icon.svg" alt="offer">
+                        <span>Apply Coupon</span>
+                    </div>
+                    <div id="offerBottom">
+                        <input type="text" placeholder="Enter Coupon Code"  autocomplete="off">
+                        <button>Apply</button>
+                        <a href="https://www.notion.so/Yummy-Pizza-0caf11085f5e4627afbd92524e404839" target="_blank" rel="noopener noreferrer">Coupon Codes</a>
+                        <p>Get discount with your order</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Price Section -->
+            <div id="priceSec">
+                <p>Price Details</p>
+                <div>
+                    <div id="subtotal">
+                        <p>Sub Total</p>
+                        <span>&#8377 <span>0.00</span></span>
+                    </div>
+
+                    <div id="discounts">
+                        <p>Discount</p>
+                        <span>&#8377 <span>0.00</span></span>
+                    </div>
+
+                    <div id="taxes">
+                        <p>Taxes and Charges</p>
+                        <span>&#8377 <span>0.00</span></span>
+                    </div>
+
+                    <div id="total">
+                        <p>Grand Total</p>
+                        <span>&#8377 <span>0.00</span></span>
+                    </div>
+
+                    <div id="placeOrder">
+                        <button>PLACE ORDER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <div id="footer">
+        <div id="footertop">
+            <div id="footertopleft">
+                <img src="../login/logo.png" alt="logo">
+                <h1>Yummy Pizza</h1>
+            </div>
+            <p>Perfect Slice, perfect Price</p>
+        </div>
+        <div id="footerbottom">
+            <p>All Rights Reserved. Copyright © Yummy Pizza Ltd. ( Ejajul Ansari )</p>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+  </body>
+</html>
