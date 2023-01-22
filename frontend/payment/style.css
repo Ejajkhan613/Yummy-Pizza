@@ -107,6 +107,20 @@ body {
     color: #0066A7;
 }
 
+#leftTop>button {
+    padding: 10px 15px;
+    background-color: #65AB0B;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+}
+
+#leftTop>button:hover {
+    background-color: #83c72b;
+    cursor: pointer;
+}
+
 #leftSec {
     width: 70%;
     height: 20px;
@@ -114,6 +128,22 @@ body {
 
 
 
+
+#noItem {
+    display: none;
+}
+
+#creditCard {
+    display: none;
+}
+
+#debitCard {
+    display: none;
+}
+
+#paymentDone {
+    display: none;
+}
 
 
 
@@ -137,10 +167,6 @@ body {
 
 /* showing this when payment done */
 
-#paymentDone {
-    display: block;
-}
-
 #makeCenter {
     width: 100%;
     padding-top: 100px;
@@ -150,12 +176,12 @@ body {
     margin-left: 350px;
 }
 
-#paymentDone > h1 {
+#paymentDone>h1 {
     text-align: center;
     color: #0066A7;
 }
 
-#paymentDone > p {
+#paymentDone>p {
     text-align: center;
     font-size: 19px;
 }
@@ -189,31 +215,8 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* showing this for Debit Card */
-#debitCard {
-    display: none;
-}
+
 .title {
     display: flex;
     justify-content: space-evenly;
@@ -266,10 +269,11 @@ body {
 
 
 
+
+
+
 /* showing this for credit card */
-#creditCard {
-    display: none;
-}
+
 .title {
     display: flex;
     justify-content: space-evenly;
@@ -327,9 +331,6 @@ body {
 
 
 /* Showing this for Cash on Delivery */
-#noItem {
-    display: none;
-}
 
 #noItem>img {
     width: 140px;

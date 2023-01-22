@@ -22,7 +22,7 @@ async function showAddress() {
   let data = document.querySelector("#textAddress");
   let username = localStorage.getItem("username");
   try {
-    let gettingAddress = await fetch("http://localhost:4500/address/get", {
+    let gettingAddress = await fetch("https://nice-outfit-tuna.cyclic.app/address/get", {
       method: "GET",
       headers: {
         "username": username
@@ -55,7 +55,7 @@ function showUsername() {
     document.querySelector("#logoutButton").addEventListener("click", () => {
       localStorage.removeItem("username")
       localStorage.removeItem("Access_Token")
-      window.location.href = "index.html";
+      window.location.href = "../login/userLogin.html";
     })
   }
 }
@@ -68,7 +68,7 @@ showUsername();
 fetchData();
 async function fetchData() {
   try {
-    let fetching = await fetch("http://localhost:4500/products?category=veg_pizza")
+    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/products?category=veg_pizza")
     let data = await fetching.json();
     renderCardList(data);
   } catch (error) {
@@ -137,7 +137,7 @@ function getAsCard(imgSrc, price, title, description, size, category, id) {
 // Add to Cart function
 async function addtocartFunc(username, id) {
   try {
-    let fetching = await fetch("http://localhost:4500/cart/add", {
+    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/cart/add", {
       method: "POST",
       headers: {
         "Content-type": "application/json"

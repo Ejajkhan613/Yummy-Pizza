@@ -188,7 +188,7 @@ form>input::placeholder {
     background-color: #31657e;
 }
 
-#form+p {
+#form~p {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -205,6 +205,3 @@ a {
     margin-left: 5px;
 }
 
-br + p {
-    text-align: center;
-}

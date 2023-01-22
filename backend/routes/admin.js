@@ -2,13 +2,14 @@
 const express = require("express");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 // Salt Round for Password Encryption
 const saltRounds = 6;
 
 
 // Secret Key for Token Generation
-const secretKey = "givemybestinthisproject";
+const secretKey = process.env.secret_key;
 
 
 // Importing Custom Modules
@@ -41,7 +42,7 @@ adminRoute.post("/register", check_admin_email, check_admin_username, check_admi
                     // Storing Data and sending response
                     let data = new AdminModel({ username, email, mobile, "password": hashed_pass });
                     await data.save();
-                    res.send([{ "message": `${data.username} is successfully registered` }, { "username": username, "Access_Token": token }]);
+                    res.send([{ "message": `registration successfull` }, { "username": username, "Access_Token": token }]);
                 } else {
                     res.send([{ "message": "Something Went Wrong" }]);
                 }
@@ -49,7 +50,6 @@ adminRoute.post("/register", check_admin_email, check_admin_username, check_admi
         } else {
             res.send([{ "message": "Wrong Admin Key" }]);
         }
-
     } catch (error) {
         res.send([{ "message": "Something Went Wrong" }]);
     }
@@ -62,7 +62,7 @@ adminRoute.post("/login", async (req, res) => {
     try {
         let check = await AdminModel.find({ "email": email });
         if (check.length == 1) {
-            
+
             bcrypt.compare(password, check[0].password, async (err, result) => {
                 if (result) {
                     // Generating Token
@@ -90,7 +90,7 @@ adminRoute.post("/login", async (req, res) => {
 // Only for Admin Purpose
 
 // GET All Admin Details
-adminRoute.get("/show", (req, res) => {
+adminRoute.get("/show", async (req, res) => {
     let token = req.headers.authorization;
     jwt.verify(token, secretKey, async (err, decoded) => {
         if (decoded) {
@@ -110,23 +110,20 @@ adminRoute.get("/show", (req, res) => {
 })
 
 
-// Add new Admin Details
-adminRoute.post("/add", (req, res) => {
+// GET Admin Detail by ID
+adminRoute.get("/find", async (req, res) => {
     let token = req.headers.authorization;
+    let id = req.headers.id;
     jwt.verify(token, secretKey, async (err, decoded) => {
         if (decoded) {
-            console.log(decoded)
             let data = await AdminModel.find({ "email": decoded.email });
             if (data.length == 1) {
                 if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
-                    let adminAdded = new AdminModel(req.body);
-                    await adminAdded.save();
-                    res.send([{ "message": "Details Added" }, adminAdded]);
+                    let foundAdmin = await AdminModel.findById({ "_id": id });
+                    res.send([{ "message": "found" }, foundAdmin]);
                 } else {
                     res.send([{ "message": "Not Authorized" }]);
                 }
-            } else {
-                res.send([{ "message": "Not Authorized" }]);
             }
         } else {
             res.send([{ "message": "Not Authorized" }]);
@@ -135,16 +132,18 @@ adminRoute.post("/add", (req, res) => {
 })
 
 
-// Update Admin Details
+
+
+// Update Admin Details by ID
 adminRoute.patch("/update", (req, res) => {
-    let {_id} = req.body;
+    let id = req.headers.id;
     let token = req.headers.authorization;
     jwt.verify(token, secretKey, async (err, decoded) => {
         if (decoded) {
             let data = await AdminModel.find({ "email": decoded.email });
             if (data.length == 1) {
                 if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
-                    let changes = await AdminModel.findByIdAndUpdate({"_id": _id}, req.body);
+                    let changes = await AdminModel.findByIdAndUpdate({ "_id": id }, req.body);
                     res.send([{ "message": "Details Updated" }, changes]);
                 } else {
                     res.send([{ "message": "Not Authorized" }]);
@@ -157,16 +156,16 @@ adminRoute.patch("/update", (req, res) => {
 })
 
 
-// Delete Admin Details
+// Delete Admin Details by ID
 adminRoute.delete("/delete", (req, res) => {
-    let {_id} = req.body;
+    let id = req.headers.id;
     let token = req.headers.authorization;
     jwt.verify(token, secretKey, async (err, decoded) => {
         if (decoded) {
             let data = await AdminModel.find({ "email": decoded.email });
             if (data.length == 1) {
                 if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
-                    let changes = await AdminModel.findByIdAndDelete({"_id": _id});
+                    let changes = await AdminModel.findByIdAndDelete({ "_id": id });
                     res.send([{ "message": "Details Deleted" }, changes]);
                 } else {
                     res.send([{ "message": "Not Authorized" }]);

@@ -1,6 +1,7 @@
 // Importing Modules
 const express = require("express");
 var jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 
 // Importing Custom Modules
@@ -13,7 +14,7 @@ const { AdminModel } = require("../models/admin");
 const cartRoute = express.Router();
 
 // Secret key
-const secretKey = "givemybestinthisproject";
+const secretKey = process.env.secret_key;
 
 
 // Middlewares

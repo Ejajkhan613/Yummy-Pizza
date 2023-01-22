@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #FFC107;
+    background-color: #3b80a0;
     font-family: poppins;
 }
 
@@ -20,12 +20,10 @@ img {
     z-index: 99;
     position: fixed;
     width: 270px;
-    top: 107px;
+    top: 87px;
     height: fit-content;
     padding: 20px 0px;
-    z-index: 999;
     overflow: hidden;
-    /* border-radius: 20px; */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow-y: auto;
@@ -34,11 +32,11 @@ img {
     box-shadow: 0 12px 30px rgb(80 143 244 / 10%);
 }
 
-.sidebar > button {
+.sidebar>button {
     padding: 10px;
     width: 80%;
     margin: auto;
-    margin: 10px 0px;
+    margin: 6px 0px;
     border: 0px;
     border-radius: 10px;
     background-color: #295b72;
@@ -46,13 +44,13 @@ img {
     font-weight: 100;
 }
 
-.sidebar > button:hover {
+.sidebar>button:hover {
     background-color: #3b80a0;
 }
 
 #header {
     background-color: #fff;
-    padding: 10px;
+    padding: 0px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -62,8 +60,8 @@ img {
     align-items: center;
 }
 
-#title > h1 {
-    color: #e0a800;
+#title>h1 {
+    color: #3b80a0;
     margin: 0px;
     margin-left: 400px;
     margin-right: 350px;
@@ -74,7 +72,385 @@ img {
     justify-content: center;
     align-items: center;
 }
-#user > p {
+
+#user>p {
     margin-left: 10px;
     font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Notification section */
+
+#empty {
+    width: fit-content;
+    padding-top: 100px;
+    margin: auto;
+}
+
+#notification {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 0px 50px;
+    display: none;
+    z-index: 100;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#notification>h2 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1F485B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Body */
+
+#mainBody {
+    margin-top: 10px;
+    margin-left: 290px;
+    height: 520px;
+    overflow-y: scroll;
+    width: 1050px;
+}
+
+
+
+
+
+
+
+/* Edit form */
+.cssforForms {
+    width: 1010px;
+    height: 520px;
+    margin: auto;
+    display: none;
+    position: fixed;
+    background-color: white;
+    border: 0px;
+}
+
+.cssforForms>h1 {
+    text-align: center;
+    color: #347a9b;
+}
+
+.cssforForms>input {
+    display: block;
+    width: 500px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 3px solid #347a9b;
+}
+
+.cssforForms>label {
+    margin-left: 250px;
+}
+
+.cssforForms>div {
+    margin: auto;
+    width: fit-content;
+}
+
+.cssforForms>div>button {
+    padding: 15px 10px;
+    font-weight: 600;
+    background-color: #00AB00;
+    width: 100px;
+    font-size: 20px;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.cssforForms>div>button:hover {
+    background-color: #06cc06;
+}
+
+
+/* Only for Add Admin Form (Because of Overflow) */
+#addAdminForm>input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 7px 10px;
+}
+
+#addAdminForm>button {
+    padding: 10px 10px;
+}
+
+
+
+/* CSS for Add Product Form ( Because of Overflow) */
+
+#addNewProduct> input {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding: 7px 10px;
+    margin-bottom: 0px;
+}
+
+#addNewProduct >h1 {
+    margin: 3px;
+}
+
+#addNewProduct > label {
+    font-size: 12px;
+}
+
+#addNewProduct >div>button {
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+/* CSS for Starting Page */
+#showLogo {
+    width: fit-content;
+    margin: auto;
+    display: block;
+    height: fit-content;
+}
+
+#showLogo>img {
+    width: 350px;
+    height: 300px;
+}
+
+#showLogo>h1 {
+    color: white;
+    text-align: center;
+}
+
+
+
+
+/* To Show Products */
+#showProducts {
+    width: 96%;
+    display: none;
+    height: fit-content;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+#title > select {
+    display: inline-flex;
+    padding: 5px;
+    border: 2px solid #0066A7;
+    color: #0066A7;
+    border-radius: 5px;
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+#title > h1 {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS to Show Order History */
+#showOrders {
+    width: 96%;
+    display: none;
+    height: fit-content;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+
+
+.individualItem {
+    height: fit-content;
+    width: 98%;
+    border: 3px solid #0066A7;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    background-color: white;
+}
+
+.leftside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSec {
+    width: fit-content;
+    height: fit-content;
+}
+
+.imgSec>img {
+    width: 110px;
+}
+
+
+.description {
+    width: 300px;
+    margin-left: 12px;
+}
+
+.description>h4 {
+    font-size: 15px;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.description>p {
+    margin: 0px;
+    font-size: 10px;
+}
+
+.sizeofitem {
+    margin: 0px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.rightside>p {
+    text-align: center;
+    font-weight: 600;
+    color: #0066A7;
+    display: inline-flex;
+    margin: 3px;
+}
+
+.rightside >span {
+    display: inline-flex;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS for User and Admin Data */
+#userData {
+    width: 96%;
+    display: none;
+    height: fit-content;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+#userData>h1 {
+    margin: 0px;
+    text-align: center;
+    color: #3b80a0;
+    font-weight: 600;
+}
+
+.ind_item {
+    width: 97%;
+    padding: 10px 10px;
+    display: flex;
+    margin: 5px 0px;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: fit-content;
+    border: 3px solid rgb(8, 133, 172);
+}
+
+.renderArea {
+    width: 100%;
+}
+
+.textArea {
+    width: 80%;
+}
+
+
+.textArea>span {
+    font-weight: 600;
+    margin: 0px;
+}
+
+.textArea>p {
+    display: inline-flex;
+    padding: 0px;
+    margin: 0px;
+    font-size: 17px;
+    margin-bottom: 2px;
+    border: 0px;
+}
+
+.buttonsArea {
+    display: flex;
+}
+
+.buttonsArea>button {
+    display: block;
+    width: 80px;
+    margin-left: 20px;
+    background-color: #00AB00;
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+.buttonsArea>button:hover {
+    cursor: pointer;
+    background-color: #04d404;
 }

@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
+require('dotenv').config();
+
 
 
 
@@ -18,7 +20,7 @@ const { orderRoute } = require("./routes/orderHistory");
 
 
 // port number
-const port = 4500;
+const port = process.env.port_no;
 
 // Using express as app keyword
 const app = express();

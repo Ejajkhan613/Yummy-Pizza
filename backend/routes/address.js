@@ -1,6 +1,7 @@
 // Importing Modules
 const express = require("express");
 const jwt = require("jsonwebtoken");
+require('dotenv').config();
 
 
 // Importing Custom Modules
@@ -10,6 +11,10 @@ const { AdminModel } = require("../models/admin");
 
 // Separating Routes
 const addressRoute = express.Router();
+
+
+// Secret Key
+const secretKey = process.env.secret_key;
 
 
 // Middlewares

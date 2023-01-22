@@ -2,13 +2,15 @@
 const express = require("express");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
+require('dotenv').config();
+
 
 // Salt Round for Password Encryption
 const saltRounds = 6;
 
 
 // Secret Key for Token Generation
-const secretKey = "givemybestinthisproject";
+const secretKey = process.env.secret_key;
 
 
 // Importing Custom Modules
@@ -33,16 +35,17 @@ userRoute.post("/register", check_user_email, check_user_username, check_user_mo
     let { username, email, mobile, password } = req.body;
     try {
         bcrypt.hash(password, saltRounds, async (err, hashed_pass) => {
-            if (hashed_pass) {
+            if (err) {
+                console.log(err)
+                res.send([{ "message": "Error while Hashing Password" }]);
+            } else {
                 // Generating Token
                 var token = jwt.sign({ email, mobile }, secretKey, { expiresIn: '24h' });
 
                 // Storing Data and sending response
                 let data = new UsersModel({ username, email, mobile, "password": hashed_pass });
                 await data.save();
-                res.send([{ "message": `${data.username} is successfully registered` }, { "username": username, "Access_Token": token }]);
-            } else {
-                res.send([{ "message": "Error while Hashing Password" }]);
+                res.send([{ "message": `registration successfull` }, { "username": username, "Access_Token": token }]);
             }
         });
     } catch (error) {
@@ -121,8 +124,8 @@ userRoute.get("/admin/find", (req, res) => {
             let data = await AdminModel.find({ "email": decoded.email });
             if (data.length == 1) {
                 if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
-                    let showUsers = await UsersModel.findById({"_id": id});
-                    res.send([{"message": "found"},showUsers]);
+                    let showUsers = await UsersModel.findById({ "_id": id });
+                    res.send([{ "message": "found" }, showUsers]);
                 } else {
                     res.send([{ "message": "Not Authorized" }]);
                 }
@@ -135,26 +138,6 @@ userRoute.get("/admin/find", (req, res) => {
 
 
 
-
-// Add User Detail
-userRoute.post("/admin/add", (req, res) => {
-    let token = req.headers.authorization;
-    jwt.verify(token, secretKey, async (err, decoded) => {
-        if (decoded) {
-            let data = await AdminModel.find({ "email": decoded.email });
-            if (data.length == 1) {
-                if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
-                    let addUser = new UsersModel(req.body);
-                    await addUser.save();
-                } else {
-                    res.send([{ "message": "Not Authorized" }]);
-                }
-            }
-        } else {
-            res.send([{ "message": "Not Authorized" }]);
-        }
-    });
-});
 
 
 

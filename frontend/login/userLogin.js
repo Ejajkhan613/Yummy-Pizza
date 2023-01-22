@@ -13,7 +13,7 @@ let signupform = document.querySelector("form").addEventListener("submit", async
         }
 
         try {
-            let fetching = await fetch("http://localhost:4500/users/login", {
+            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/users/login", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

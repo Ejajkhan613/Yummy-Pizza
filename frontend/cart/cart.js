@@ -23,7 +23,7 @@ async function showAddress() {
   let data = document.querySelector("#addressShow");
   let username = localStorage.getItem("username");
   try {
-    let gettingAddress = await fetch("http://localhost:4500/address/get", {
+    let gettingAddress = await fetch("https://nice-outfit-tuna.cyclic.app/address/get", {
       method: "GET",
       headers: {
         "username": username
@@ -33,7 +33,7 @@ async function showAddress() {
     let pilup = res[0].first_name + " " + res[0].last_name + "\n" + "street - " + res[0].street_no + "\n" + "house - " + res[0].house_no + " \n" + "place - " + res[0].locality + ",  " + "pincode -" + res[0].pincode;
     data.innerText = pilup.substring(0, 90);
   } catch (error) {
-    alert("error while getting your address");
+    console.log("error while getting your address");
   }
 }
 showAddress();
@@ -42,12 +42,12 @@ showAddress();
 
 
 
-// Fetching Cart Data
+// Fetching Product Data
 fetchData();
 async function fetchData() {
   let username = localStorage.getItem("username")
   try {
-    let fetching = await fetch("http://localhost:4500/cart", {
+    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/cart", {
       method: "GET",
       headers: {
         "username": username
@@ -93,7 +93,7 @@ function renderCardList(data) {
       </div>
   `;
 
-  // Increasing Item of Cart functionality
+  // Decreasing Item Quantity of Cart functionality
   let decreasing = document.querySelectorAll(".minus");
   for (let decrease of decreasing) {
     decrease.addEventListener("click", (element) => {
@@ -105,7 +105,7 @@ function renderCardList(data) {
   }
 
 
-  // Increasing Item of Cart functionality
+  // Increasing Item Quantity of Cart functionality
   let increasing = document.querySelectorAll(".plus");
   for (let increase of increasing) {
     increase.addEventListener("click", (element) => {
@@ -148,10 +148,10 @@ function getAsCard(imgSrc, price, title, description, size, category, id, userna
 
 
 
-// Add to Cart function
+// Quantity Addition or Subtraction function
 async function updateCart(currentQuantity, id, username) {
   try {
-    let fetching = await fetch("http://localhost:4500/cart/update", {
+    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/cart/update", {
       method: "PATCH",
       headers: {
         "Content-type": "application/json"
@@ -168,19 +168,55 @@ async function updateCart(currentQuantity, id, username) {
 
 
 
-// Rendering Total Price
+// Applying Discount
+document.querySelector("#offerBottom>button").addEventListener("click", async () => {
+  try {
+    let input = document.querySelector("#offerBottom>input");
+    if (input.value == "") {
+      alert("please apply coupon first")
+    } else {
+      let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/discount", {
+        method: "GET",
+        headers: {
+          "username": localStorage.getItem("username"),
+          "name": input.value
+        }
+      });
+      let res = await fetching.json();
+      if (res.length == 2) {
+        console.log(res)
+        sessionStorage.setItem("discount", +(res[1][0].price));
+        fetchData();
+        alert(res[0].message);
+      } else {
+        alert(res[0].message);
+      }
 
+    }
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+
+
+
+// Rendering Total Price
 function renderPrice(data) {
   let total = document.querySelector("#subtotal>span>span");
-  let grandTotal = document.querySelector("#total>span");
-  let taxes = document.querySelector("#taxes>span")
-
+  let grandTotal = document.querySelector("#total>span>span");
+  let taxes = document.querySelector("#taxes>span>span");
+  let discountApplied = sessionStorage.getItem("discount") || 0;
+  let discount = document.querySelector("#discounts>span>span");
 
   let calculateSubtotal = 0;
   for (let a = 0; a < data.length; a++) {
     calculateSubtotal = calculateSubtotal + (data[a].price * data[a].quantity);
   }
+  calculateSubtotal = calculateSubtotal - (+discountApplied);
   let allTax = (calculateSubtotal + (calculateSubtotal * (18 / 100))) - calculateSubtotal;
+  discount.innerText = +discountApplied;
   total.innerText = calculateSubtotal.toFixed(2);
   taxes.innerText = allTax.toFixed(2);
   grandTotal.innerText = (calculateSubtotal + (calculateSubtotal * (18 / 100))).toFixed(2);
@@ -190,11 +226,23 @@ function renderPrice(data) {
 
 
 
+// Redirecting to Payment Page
+document.querySelector("#placeOrder>button").addEventListener("click", () => {
+  let total = document.querySelector("#total>span>span");
+  if (total.innerText == "0.00") {
+    alert("Please add Item first")
+  } else {
+    window.location.href = "../payment/payment.html"
+  }
+})
 
 
 
 
 
+
+
+// To Show Notifications
 function shownotif(data) {
   if (data == undefined) {
     data = "Error";

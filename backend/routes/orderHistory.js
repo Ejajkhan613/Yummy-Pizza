@@ -1,12 +1,12 @@
 // Importing Modules
 const express = require("express");
 var jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 
 // Importing Custom Modules
 const { OrderModel } = require("../models/orderHistory");
 const { CartModel } = require("../models/cart");
-const { ProductModel } = require("../models/products");
 const { UsersModel } = require("../models/users");
 const { AdminModel } = require("../models/admin");
 
@@ -14,7 +14,7 @@ const { AdminModel } = require("../models/admin");
 const orderRoute = express.Router();
 
 // Secret key
-const secretKey = "givemybestinthisproject";
+const secretKey = process.env.secret_key;
 
 
 // Middlewares
@@ -84,6 +84,33 @@ orderRoute.patch("/update", async (req, res) => {
 
 
 
+
+
+
+
+
+// Admin Purpose Only
+// Add new Product Details
+orderRoute.get("/admin/get", (req, res) => {
+    let token = req.headers.authorization;
+    jwt.verify(token, secretKey, async (err, decoded) => {
+        if (decoded) {
+            let data = await AdminModel.find({ "email": decoded.email });
+            if (data.length == 1) {
+                if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
+                    let getOrderHistory = await OrderModel.find().sort({"date": -1});
+                    res.send(getOrderHistory);
+                } else {
+                    res.send([{ "message": "Not Authorized" }]);
+                }
+            } else {
+                res.send([{ "message": "Not Authorized" }]);
+            }
+        } else {
+            res.send([{ "message": "Not Authorized" }]);
+        }
+    });
+})
 
 
 

@@ -20,31 +20,292 @@
       <!-- Side Navbar Section -->
       <div class="sidebar">
         <button id="userDetails">User Details</button>
-        <button>Admin Details</button>
-        <button>Users Address</button>
-        <button>Products</button>
+        <button id="addUserDetails">Add User</button>
+        <hr />
+        <button id="adminDetails">Admin Details</button>
+        <button id="addAdminDetails">Add Admin</button>
+        <hr />
+        <!-- <button id="orderHistory">Order History</button>
+        <hr /> -->
+        <button id="showAllProducts">Show Products</button>
+        <button id="showAddProduct">Add Product</button>
+        <hr />
+        <button id="addnewDiscount">Add Discount</button>
+      </div>
+    </div>
+    <!-- Dashboard Section -->
+    <div id="header">
+      <img src="./admin_login/logo.png" alt="logo" />
+      <div id="title">
+        <h1>Admin Panel</h1>
+      </div>
+      <div id="user">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#64C5B1"
+          class="bi bi-person-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          />
+        </svg>
+        <p id="showUser"></p>
+      </div>
+    </div>
+
+    <!-- Notification Section -->
+    <div id="empty">
+      <div id="notification">
+        <h2></h2>
+      </div>
+    </div>
+
+    <!-- Main Body to show Data -->
+    <div id="mainBody">
+      <!-- To Edit User Details -->
+      <div id="editForm" class="cssforForms">
+        <h1>Edit User Data</h1>
+        <label>Username</label>
+        <input type="text" id="edit_username" autocomplete="off" />
+
+        <label>Email</label>
+        <input type="text" id="edit_email" autocomplete="off" />
+
+        <label>Mobile</label>
+        <input type="text" id="edit_mobile" autocomplete="off" />
+
+        <div>
+          <button id="savebutton">Save</button>
+          <button id="exitbutton">Exit</button>
+        </div>
       </div>
 
-      <!-- Dashboard Section -->
-      <div id="header">
-        <img src="./admin_login/logo.png" alt="logo" />
+
+
+      
+
+
+      <!-- <div id="showOrders">
         <div id="title">
-          <h1>Admin Panel</h1>
+          <h1>Order History</h1>
         </div>
-        <div id="user">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="#64C5B1"
-            class="bi bi-person-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-            />
-          </svg>
-          <p id="showUser"></p>
+        <div class="ind_itemm">
+          <div class="textArea">
+            <span for="">USERNAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <p>Ejajul_Ansari</p>
+            <br />
+
+            <span for=""
+              >MODE
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+            >
+            <p>Cash_On_Delivery</p>
+            <br />
+            
+            <span for=""
+              >TIME
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+            >
+            <p>2023-01-21T10:01:05.046Z</p>
+            <br />
+
+            <div class="individualItem">
+              <div class="leftside">
+                  <div class="imgSec">
+                      <img src="../svg/20815.jpg" alt="image">
+                  </div>
+                  <div class="description">
+                      <h4>oven drivven piza</h4>
+                      <p>pizza is the best and also worst thing in the world</p>
+                      <p class="sizeofitem">Medium</p>
+                  </div>
+              </div>
+              <div class="rightside">
+                  <span>Category - </span><p>Best_Sellers</p>
+                  <br>
+                  <span>Price - </span><p> &#8377 439</p>
+                  <br>
+                  <span>Quantity - </span><p>2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+
+      <!-- TO Show Products -->
+      <div id="showProducts">
+        <div id="title">
+          <h1>Product Details</h1>
+          <select id="select_category">
+            <option value="all">ALL Products</option>
+            <option value="best_sellers">Best Sellers</option>
+            <option value="new_launches">New Launches</option>
+            <option value="paratha_pizza">Paratha Pizza</option>
+            <option value="veg_pizza">Veg Pizza</option>
+            <option value="gourmet_pizza">Gourmet Pizza</option>
+            <option value="nonveg_pizza">NonVeg Pizza</option>
+            <option value="bevrages">Bevrages</option>
+            <option value="speciality_chicken">Speciality Chicken</option>
+            <option value="sides">Sides</option>
+          </select>
+        </div>
+        <div class="allProductsHere">
+         <!-- Showing All Products Here -->
+        </div>
+      </div>
+
+
+
+
+
+      <!-- To Edit Admin Details -->
+      <div id="admineditForm" class="cssforForms">
+        <h1>Edit Admin Data</h1>
+        <label>Username</label>
+        <input type="text" id="edit_admin_username" autocomplete="off" />
+
+        <label>Email</label>
+        <input type="text" id="edit_admin_email" autocomplete="off" />
+
+        <label>Mobile</label>
+        <input type="text" id="edit_admin_mobile" autocomplete="off" />
+
+        <div>
+          <button id="adminsavebutton">Save</button>
+          <button id="adminexitbutton">Exit</button>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- To Add Discount Details -->
+      <div id="addDiscount" class="cssforForms">
+        <h1>Add Discount</h1>
+        <label>Name</label>
+        <input type="text" id="add_discount_name" autocomplete="off" />
+
+        <label>price</label>
+        <input type="text" id="add_discount_price" autocomplete="off" />
+
+        <div>
+          <button id="discountbutton">Save</button>
+          <button id="discountdeletebutton">Exit</button>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- To Add a New user -->
+      <div id="addUserForm" class="cssforForms">
+        <h1>Add User</h1>
+        <label>Username</label>
+        <input type="text" id="add_user_username" autocomplete="off" />
+
+        <label>Email</label>
+        <input type="text" id="add_user_email" autocomplete="off" />
+
+        <label>Mobile</label>
+        <input type="text" id="add_user_mobile" autocomplete="off" />
+
+        <label>Password</label>
+        <input type="text" id="add_user_password" autocomplete="off" />
+
+        <div>
+          <button id="add_user_save_button">Save</button>
+          <button id="add_user_delete_button">Exit</button>
+        </div>
+      </div>
+
+
+
+
+  
+      <!-- To Add a New Product -->
+      <div id="addNewProduct" class="cssforForms">
+        <h1>Add Product</h1>
+        <label>Name</label>
+        <input type="text" id="add_product_name" autocomplete="off" />
+
+        <label>Description</label>
+        <input type="text" id="add_product_description" autocomplete="off" />
+
+        <label>Image</label>
+        <input type="text" id="add_product_image" autocomplete="off" />
+
+        <label>Price</label>
+        <input type="text" id="add_product_price" autocomplete="off" />
+
+        <label>Size</label>
+        <input type="text" id="add_product_size" autocomplete="off" />
+
+        <label>Category</label>
+        <input type="text" id="add_product_category" autocomplete="off" />
+        
+        <div>
+          <button id="add_product_save_button">Save</button>
+          <button id="add_product_delete_button">Exit</button>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <!-- To Add a New Admin -->
+      <div id="addAdminForm" class="cssforForms">
+        <h1>Add Admin</h1>
+        <label>Username</label>
+        <input type="text" id="add_admin_username" autocomplete="off" />
+
+        <label>Email</label>
+        <input type="text" id="add_admin_email" autocomplete="off" />
+
+        <label>Mobile</label>
+        <input type="text" id="add_admin_mobile" autocomplete="off" />
+
+        <label>Password</label>
+        <input type="text" id="add_admin_password" autocomplete="off" />
+
+        <label>Admin Key</label>
+        <input type="password" id="add_admin_key" autocomplete="off" />
+
+        <div>
+          <button id="add_admin_save_button">Save</button>
+          <button id="add_admin_delete_button">Exit</button>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- Showing this in Starting -->
+      <div id="showLogo">
+        <img src="../login/logo.png" alt="" />
+        <h1>YUMMY PIZZA</h1>
+        <h1>Welcome to Admin Panel</h1>
+      </div>
+
+      <!-- Showing User and Admin Detais  -->
+      <div id="userData">
+        <h1>User Data</h1>
+        <div class="ind_item">
+          <!-- Rendering User Data here -->
         </div>
       </div>
     </div>

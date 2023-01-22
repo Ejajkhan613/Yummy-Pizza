@@ -1,9 +1,10 @@
 // Importing Modules
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 
 // Creating Connection from MongoDB
-const Connection = mongoose.connect("mongodb+srv://ejajulansari:ejajulansari@ejajulansari.pqblhhv.mongodb.net/nxm101?retryWrites=true&w=majority");
+const Connection = mongoose.connect(process.env.mongoDB_URL);
 
 
 

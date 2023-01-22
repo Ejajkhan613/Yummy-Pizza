@@ -12,6 +12,7 @@ const check_user_mobile = async (req, res, next) => {
     let { mobile } = req.body;
     try {
         let data = await UsersModel.find({ "mobile": mobile });
+        console.log(data)
         if (data.length == 0) {
             next();
         } else {

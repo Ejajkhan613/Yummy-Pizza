@@ -1,12 +1,13 @@
 // Importing Modules
 const express = require("express");
+require('dotenv').config();
 
 // Importing Custom Modules
 const { AdminModel } = require("../models/admin");
 
 
 // Secret Key for Token Generation
-const secretKey = "givemybestinthisproject";
+const secretKey = process.env.secret_key;
 
 
 
