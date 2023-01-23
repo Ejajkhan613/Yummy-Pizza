@@ -17,6 +17,6 @@ Project Name = Yummy Pizza
 
 Project Backend Link = https://nice-outfit-tuna.cyclic.app/
 
-Project Frontend Link = https://sparkly-nasturtium-0eefe2.netlify.app/
+Project Frontend Link = https://yummypizza-delivering-smile.netlify.app/
 
 Cyclic Configuration Link = https://app.cyclic.sh/#/app/ejajkhan613-unit4backenddeployment/overview
