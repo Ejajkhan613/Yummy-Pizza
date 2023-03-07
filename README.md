@@ -25,13 +25,13 @@ Cyclic Configuration Link = https://app.cyclic.sh/#/app/ejajkhan613-unit4backend
 
 
 # Tech Stacks
-HTML
-CSS
-JavaScript
-MongoDB
-ExpressJS
-NodeJS
-MongooseJS
+- HTML
+- CSS
+- JavaScript
+- MongoDB
+- ExpressJS
+- NodeJS
+- MongooseJS
 
 
 
