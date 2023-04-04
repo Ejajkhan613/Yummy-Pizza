@@ -312,7 +312,7 @@ body {
 
 
 
-#user > a {
+#user>a {
     text-decoration: none;
 }
 
@@ -374,4 +374,35 @@ body {
     text-align: center;
     color: #54677A;
     font-size: 14px;
+}
+
+
+
+
+/* Loading Screen */
+
+#loadingDiv {
+    width: fit-content;
+    height: 40px;
+    margin: auto;
+}
+
+#LoadingDataDiv {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 0px 50px;
+    display: block;
+    z-index: 1000;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#notifiLoadingDataDiv>h2 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1F485B;
 }

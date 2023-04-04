@@ -70,6 +70,7 @@ async function fetchData() {
   try {
     let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/products?category=paratha_pizza")
     let data = await fetching.json();
+    document.getElementById("LoadingDataDiv").style.display = "none";
     renderCardList(data);
   } catch (error) {
     console.log(error);
