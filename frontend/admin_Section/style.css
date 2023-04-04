@@ -454,3 +454,12 @@ img {
     cursor: pointer;
     background-color: #04d404;
 }
+
+
+/* List Box */
+
+.ind_item_box {
+    border: 3px solid #0066A7;
+    padding: 5px 15px;
+    border-radius: 5px;
+}

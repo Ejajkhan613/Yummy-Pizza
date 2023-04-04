@@ -42,10 +42,17 @@ async function fetchData() {
             }
         })
         let res = await data.json();
+        document.getElementById("showOrders").style.display = "none";
         document.getElementById("showLogo").style.display = "none";
-        document.getElementById("userData").style.display = "none";
-        document.getElementById("showProducts").style.display = "none";
         document.getElementById("userData").style.display = "block";
+        document.getElementById("showProducts").style.display = "none";
+
+        document.getElementById("admineditForm").style.display = "none";
+        document.getElementById("editForm").style.display = "none";
+        document.getElementById("addAdminForm").style.display = "none";
+        document.getElementById("addUserForm").style.display = "none";
+        document.getElementById("addDiscount").style.display = "none";
+        document.getElementById("addNewProduct").style.display = "none";
         renderCardList(res);
     } catch (error) {
         shownotif(error)
@@ -75,9 +82,17 @@ async function fetchAdminData() {
         })
         let res = await data.json();
         document.getElementById("showLogo").style.display = "none";
-        document.getElementById("userData").style.display = "none";
-        document.getElementById("showProducts").style.display = "none";
         document.getElementById("userData").style.display = "block";
+        document.getElementById("showProducts").style.display = "none";
+        document.getElementById("showOrders").style.display = "none";
+
+
+        document.getElementById("admineditForm").style.display = "none";
+        document.getElementById("editForm").style.display = "none";
+        document.getElementById("addAdminForm").style.display = "none";
+        document.getElementById("addUserForm").style.display = "none";
+        document.getElementById("addDiscount").style.display = "none";
+        document.getElementById("addNewProduct").style.display = "none";
         renderCardList(res, "admin");
     } catch (error) {
         shownotif(error);
@@ -177,7 +192,18 @@ function renderCardList(data, forAdmin) {
                     console.log(res);
                     if (res[0].message == "found") {
 
+                        document.getElementById("showLogo").style.display = "none";
+                        document.getElementById("userData").style.display = "none";
+                        document.getElementById("showProducts").style.display = "none";
+                        document.getElementById("showOrders").style.display = "none";
+
+                        document.getElementById("admineditForm").style.display = "none";
                         document.getElementById("editForm").style.display = "block";
+                        document.getElementById("addAdminForm").style.display = "none";
+                        document.getElementById("addUserForm").style.display = "none";
+                        document.getElementById("addDiscount").style.display = "none";
+                        document.getElementById("addNewProduct").style.display = "none";
+
                         let username = document.querySelector("#edit_username");
                         let email = document.querySelector("#edit_email");
                         let mobile = document.querySelector("#edit_mobile");
@@ -203,7 +229,20 @@ function renderCardList(data, forAdmin) {
                     })
                     let res = await fetching.json();
                     if (res[0].message == "found") {
+                        document.getElementById("showLogo").style.display = "none";
+                        document.getElementById("userData").style.display = "none";
+                        document.getElementById("showProducts").style.display = "none";
+                        document.getElementById("showOrders").style.display = "none";
+
+                        document.getElementById("editForm").style.display = "none";
+                        document.getElementById("addAdminForm").style.display = "none";
+                        document.getElementById("addUserForm").style.display = "none";
+                        document.getElementById("addDiscount").style.display = "none";
+                        document.getElementById("addNewProduct").style.display = "none";
+
                         document.getElementById("admineditForm").style.display = "block";
+
+
                         let username = document.querySelector("#edit_admin_username");
                         let email = document.querySelector("#edit_admin_email");
                         let mobile = document.querySelector("#edit_admin_mobile");
@@ -435,8 +474,17 @@ document.getElementById("adminexitbutton").addEventListener("click", () => {
 
 // Showing Add User Form
 document.getElementById("addUserDetails").addEventListener("click", () => {
+    document.getElementById("showLogo").style.display = "none";
+    document.getElementById("userData").style.display = "none";
+    document.getElementById("showProducts").style.display = "none";
+    document.getElementById("showOrders").style.display = "none";
+
+    document.getElementById("admineditForm").style.display = "none";
     document.getElementById("editForm").style.display = "none";
     document.getElementById("addAdminForm").style.display = "none";
+    document.getElementById("addDiscount").style.display = "none";
+    document.getElementById("addNewProduct").style.display = "none";
+
     document.getElementById("addUserForm").style.display = "block";
 });
 
@@ -510,9 +558,18 @@ document.getElementById("add_user_delete_button").addEventListener("click", () =
 
 // Showing Add Discount Form
 document.getElementById("addnewDiscount").addEventListener("click", () => {
+    document.getElementById("showLogo").style.display = "none";
+    document.getElementById("userData").style.display = "none";
+    document.getElementById("showProducts").style.display = "none";
+    document.getElementById("showOrders").style.display = "none";
+
+
+    document.getElementById("admineditForm").style.display = "none";
     document.getElementById("editForm").style.display = "none";
     document.getElementById("addAdminForm").style.display = "none";
     document.getElementById("addUserForm").style.display = "none";
+    document.getElementById("addNewProduct").style.display = "none";
+
     document.getElementById("addDiscount").style.display = "block";
 });
 
@@ -585,12 +642,18 @@ document.getElementById("discountdeletebutton").addEventListener("click", () => 
 
 // Showing Add Product Form
 document.getElementById("showAddProduct").addEventListener("click", () => {
-    document.getElementById("editForm").style.display = "none";
+    document.getElementById("showLogo").style.display = "none";
+    document.getElementById("userData").style.display = "none";
+    document.getElementById("showProducts").style.display = "none";
+    document.getElementById("showOrders").style.display = "none";
+
+
     document.getElementById("admineditForm").style.display = "none";
+    document.getElementById("editForm").style.display = "none";
     document.getElementById("addAdminForm").style.display = "none";
     document.getElementById("addUserForm").style.display = "none";
-    document.getElementById("showProducts").style.display = "none";
     document.getElementById("addDiscount").style.display = "none";
+
     document.getElementById("addNewProduct").style.display = "block";
 });
 
@@ -675,8 +738,18 @@ document.getElementById("add_product_delete_button").addEventListener("click", (
 
 // Showing Add Admin Form
 document.getElementById("addAdminDetails").addEventListener("click", () => {
+    document.getElementById("showLogo").style.display = "none";
+    document.getElementById("userData").style.display = "none";
+    document.getElementById("showProducts").style.display = "none";
+    document.getElementById("showOrders").style.display = "none";
+
+
+    document.getElementById("admineditForm").style.display = "none";
     document.getElementById("editForm").style.display = "none";
     document.getElementById("addUserForm").style.display = "none";
+    document.getElementById("addDiscount").style.display = "none";
+    document.getElementById("addNewProduct").style.display = "none";
+
     document.getElementById("addAdminForm").style.display = "block";
 });
 
@@ -748,31 +821,100 @@ document.getElementById("add_admin_delete_button").addEventListener("click", () 
 
 // // To Show Orders
 // // Getting Order Details
-// document.querySelector("#orderHistory").addEventListener("click", fetchOrderHistory);
+document.querySelector("#orderHistory").addEventListener("click", fetchOrderHistory);
 
-// async function fetchOrderHistory() {
-//     let token = sessionStorage.getItem("Access_Token");
-//     try {
-//         let data = await fetch("https://nice-outfit-tuna.cyclic.app/orderHistory/admin/get", {
-//             method: "GET",
-//             headers: {
-//                 "Authorization": token
-//             }
-//         })
-//         let res = await data.json();
-//         // document.getElementById("showLogo").style.display = "none";
-//         // document.getElementById("userData").style.display = "none";
-//         // document.getElementById("showOrders").style.display = "block";
-//         console.log(res)
+async function fetchOrderHistory() {
+    let token = sessionStorage.getItem("Access_Token");
+    try {
+        let data = await fetch("https://nice-outfit-tuna.cyclic.app/orderHistory/admin/get", {
+            method: "GET",
+            headers: {
+                "Authorization": token
+            }
+        })
+        let res = await data.json();
 
-//     } catch (error) {
-//         shownotif(error);
-//     }
-// };
+        document.getElementById("showLogo").style.display = "none";
+        document.getElementById("userData").style.display = "none";
+        document.getElementById("showProducts").style.display = "none";
+
+        document.getElementById("admineditForm").style.display = "none";
+        document.getElementById("editForm").style.display = "none";
+        document.getElementById("addAdminForm").style.display = "none";
+        document.getElementById("addUserForm").style.display = "none";
+        document.getElementById("addDiscount").style.display = "none";
+        document.getElementById("addNewProduct").style.display = "none";
+
+        document.getElementById("showOrders").style.display = "block";
+        showAllBookings(res);
+    } catch (error) {
+        shownotif(error);
+    }
+};
 
 
 
+function showAllBookings(data) {
+    let renderProductArea = document.querySelector(".ind_itemm")
+    renderProductArea.innerHTML = "";
+    renderProductArea.innerHTML = `
+        ${data.map((item) => {
+        let isoDate = new Date(item.date);
+        let total = 0;
+        for (let a = 0; a < item.product_list.length; a++) {
+            total += item.product_list[a].quantity * item.product_list[a].price;
+        }
+        return `<div class="ind_item_box">
+                    <div class="textArea">
+                        <span for="">USERNAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <p>${item.username}</p>
+                        <br />
 
+                        <span for=""
+                            >MODE
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        >
+                        <p>${item.mode}</p>
+                        <br />
+                        
+                        <span for=""
+                            >TIME
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        >
+                        <p>${isoDate}</p>
+                        <br />
+                        <span for=""
+                            >TOTAL PRICE
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        >
+                        <p>${total}</p>
+                        <br />
+                        
+                            ${item.product_list.map((item) => {
+                                return `<div class="individualItem">
+                                                <div class="leftside">
+                                                    <div class="imgSec">
+                                                        <img src="${item.image}" alt="${item.name}">
+                                                    </div>
+                                                    <div class="description">
+                                                        <h4>${item.name}</h4>
+                                                        <p>${item.description}</p>
+                                                        <p class="sizeofitem">${item.size}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="rightside">
+                                                    <span>Category - </span><p>${item.category}</p>
+                                                    <br>
+                                                    <span>Price - </span><p> &#8377 ${item.price}</p>
+                                                    <br>
+                                                    <span>Quantity - </span><p>${item.quantity}</p>
+                                                </div>
+                                            </div>`
+                            }).join("")}
+                    </div>
+                </div><br><br>`
+    }).join("")}`;
+}
 
 
 
@@ -813,9 +955,18 @@ async function fetchProductData() {
             }
         })
         let res = await data.json();
-        console.log(res)
+
         document.getElementById("showLogo").style.display = "none";
         document.getElementById("userData").style.display = "none";
+        document.getElementById("showOrders").style.display = "none";
+
+        document.getElementById("admineditForm").style.display = "none";
+        document.getElementById("editForm").style.display = "none";
+        document.getElementById("addAdminForm").style.display = "none";
+        document.getElementById("addUserForm").style.display = "none";
+        document.getElementById("addDiscount").style.display = "none";
+        document.getElementById("addNewProduct").style.display = "none";
+
         document.getElementById("showProducts").style.display = "block";
         renderProductList(res);
     } catch (error) {
@@ -838,8 +989,19 @@ document.querySelector("#select_category").addEventListener("change", async () =
                 }
             })
             let res = await data.json();
+
             document.getElementById("showLogo").style.display = "none";
             document.getElementById("userData").style.display = "none";
+            document.getElementById("showOrders").style.display = "none";
+
+
+            document.getElementById("admineditForm").style.display = "none";
+            document.getElementById("editForm").style.display = "none";
+            document.getElementById("addAdminForm").style.display = "none";
+            document.getElementById("addUserForm").style.display = "none";
+            document.getElementById("addDiscount").style.display = "none";
+            document.getElementById("addNewProduct").style.display = "none";
+
             document.getElementById("showProducts").style.display = "block";
             renderProductList(res);
         } else {
@@ -851,8 +1013,19 @@ document.querySelector("#select_category").addEventListener("change", async () =
                 }
             })
             let res = await data.json();
+
             document.getElementById("showLogo").style.display = "none";
             document.getElementById("userData").style.display = "none";
+            document.getElementById("showOrders").style.display = "none";
+
+
+            document.getElementById("admineditForm").style.display = "none";
+            document.getElementById("editForm").style.display = "none";
+            document.getElementById("addAdminForm").style.display = "none";
+            document.getElementById("addUserForm").style.display = "none";
+            document.getElementById("addDiscount").style.display = "none";
+            document.getElementById("addNewProduct").style.display = "none";
+
             document.getElementById("showProducts").style.display = "block";
             renderProductList(res);
         }
