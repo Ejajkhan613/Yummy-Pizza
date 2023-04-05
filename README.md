@@ -1,5 +1,6 @@
+# Yummy Pizza 🍕
 
-Project Code  => star-theory-7179
+- This project is an online pizza ordering platform where users can register, log in, and order pizza online. The application allows users to browse different types of pizza, add them to their cart, and place an order.
 
 ## Developer Details ##
 Name  =>  Ejajul Ansari
