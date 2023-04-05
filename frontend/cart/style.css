@@ -76,7 +76,6 @@ body {
     margin: 0px;
     display: flex;
     justify-content: space-between;
-
 }
 
 #leftTop>p {
@@ -88,11 +87,11 @@ body {
 }
 
 #leftTop>a {
-    margin-left: 400px;
     text-decoration: none;
     font-weight: 600;
     color: #0066A7;
 }
+
 
 #leftSec {
     width: 70%;
