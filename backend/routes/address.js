@@ -1,74 +1,70 @@
 // Importing Modules
-const express = require("express");
-const jwt = require("jsonwebtoken");
-require('dotenv').config();
-
+const express = require("express");  // Importing express module
+const jwt = require("jsonwebtoken");  // Importing jsonwebtoken module
+require('dotenv').config();  // Loading .env file for environment variables
 
 // Importing Custom Modules
-const { AddressModel } = require("../models/address");
-const { UsersModel } = require("../models/users");
-const { AdminModel } = require("../models/admin");
+const { AddressModel } = require("../models/address");  // Importing AddressModel from address.js file
+const { UsersModel } = require("../models/users");  // Importing UsersModel from users.js file
+const { AdminModel } = require("../models/admin");  // Importing AdminModel from admin.js file
 
 // Separating Routes
-const addressRoute = express.Router();
-
+const addressRoute = express.Router();  // Creating a new router instance to handle address related routes
 
 // Secret Key
-const secretKey = process.env.secret_key;
-
+const secretKey = process.env.secret_key;  // Getting the secret key from the environment variable
 
 // Middlewares
-addressRoute.use(express.json());
-
+addressRoute.use(express.json());  // Using middleware to parse the request body as JSON
 
 // For Users
 // GET Address Details Route
 addressRoute.get("/get", async (req, res) => {
-    let { username } = req.headers;
+    let { username } = req.headers;  // Extracting the username from request headers
     try {
-        let data = await AddressModel.find({ "username": username });
-        res.send(data);
+        let data = await AddressModel.find({ "username": username });  // Finding address details for given username
+        res.send(data);  // Sending the address details in response
     } catch (error) {
-        res.send([{ "message": "Something Went Wrong" }]);
+        res.send([{ "message": "Something Went Wrong" }]);  // Handling error if something goes wrong
     }
 });
-
 
 // Add Address Details Route
 addressRoute.post("/add", async (req, res) => {
-    let { username } = req.body;
-    let address_details = req.body;
+    let { username } = req.body;  // Extracting the username from request body
+    let address_details = req.body;  // Extracting the address details from request body
     try {
-        let getting_data = await UsersModel.find({ "username": username });
+        let getting_data = await UsersModel.find({ "username": username });  // Finding user with given username
         if (getting_data.length >= 1) {
-            let data = new AddressModel(address_details);
-            await data.save()
-            res.send([{ "message": "Address Saved" }, data]);
+            let data = new AddressModel(address_details);  // Creating a new AddressModel instance with address details
+            await data.save()  // Saving the address details to the database
+            res.send([{ "message": "Address Saved" }, data]);  // Sending the success message along with the saved address details
         } else {
-            res.send([{ "message": "Not Authorized Please Login" }]);
+            res.send([{ "message": "Not Authorized Please Login" }]);  // Handling error if user is not authorized
         }
     } catch (error) {
-        res.send([{ "message": "Something Went Wrong" }]);
+        res.send([{ "message": "Something Went Wrong" }]);  // Handling error if something goes wrong
     }
 });
-
-
 
 // Update Address Details Route
 addressRoute.patch("/update", async (req, res) => {
-    let { username } = req.body;
+    let { username } = req.body;  // Extracting the username from request body
     try {
-        let data = await AddressModel.find({ "username": username });
+        let data = await AddressModel.find({ "username": username });  // Finding address details for given username
         if (data.length >= 1) {
-            let new_address = await AddressModel.findByIdAndUpdate({ "_id": data[0]._id }, req.body);
-            res.send({ "message": "Address Updated" }, new_address);
+            let new_address = await AddressModel.findByIdAndUpdate({ "_id": data[0]._id }, req.body);  // Updating the address details in the database
+            res.send({ "message": "Address Updated" }, new_address);  // Sending the success message along with the updated address details
         } else {
-            res.send([{ "message": "Not an Authorized User" }]);
+            res.send([{ "message": "Not an Authorized User" }]);  // Handling error if user is not authorized
         }
     } catch (error) {
-        res.send([{ "message": "Something Went Wrong" }]);
+        res.send([{ "message": "Something Went Wrong" }]);  // Handling error if something goes wrong
     }
 });
+
+
+
 
 
 
