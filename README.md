@@ -20,8 +20,6 @@ Project Backend Link = https://nice-outfit-tuna.cyclic.app/
 
 Project Frontend Link = https://yummypizza-delivering-smile.netlify.app/
 
-Cyclic Configuration Link = https://app.cyclic.sh/#/app/ejajkhan613-unit4backenddeployment/overview
-
 
 
 
