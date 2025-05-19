@@ -1,23 +1,18 @@
-// Importing Modules
 const express = require("express");
 var jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 
-// Importing Custom Modules
 const { OrderModel } = require("../models/orderHistory");
 const { CartModel } = require("../models/cart");
 const { UsersModel } = require("../models/users");
 const { AdminModel } = require("../models/admin");
 
-// Separating Routes
 const orderRoute = express.Router();
 
-// Secret key
-const secretKey = process.env.secret_key;
+const secretKey = process.env.SECRET_KEY;
 
 
-// Middlewares
 orderRoute.use(express.json());
 
 
@@ -89,7 +84,7 @@ orderRoute.patch("/update", async (req, res) => {
 
 
 
-// Admin Purpose Only
+// Admin API's
 // Add new Product Details
 orderRoute.get("/admin/get", (req, res) => {
     let token = req.headers.authorization;
@@ -113,14 +108,4 @@ orderRoute.get("/admin/get", (req, res) => {
 })
 
 
-
-
-
-
-
-
-
-
-
-// Exporting product Route
 module.exports = { orderRoute };

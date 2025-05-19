@@ -1,26 +1,20 @@
-// Importing Modules
 const express = require("express");
 var jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-
-// Importing Custom Modules
 const { CartModel } = require("../models/cart");
 const { ProductModel } = require("../models/products");
 const { UsersModel } = require("../models/users");
 const { AdminModel } = require("../models/admin");
 
-// Separating Routes
 const cartRoute = express.Router();
 
-// Secret key
-const secretKey = process.env.secret_key;
+const secretKey = process.env.SECRET_KEY;
 
-
-// Middlewares
 cartRoute.use(express.json());
 
 
+// User API's
 // GET Product Details Route
 cartRoute.get("/", async (req, res) => {
     let { username } = req.headers;
@@ -122,7 +116,7 @@ cartRoute.post("/add", async (req, res) => {
 
 
 
-// Only for Admin Purpose
+// Admin API's
 
 // Add new Product Details
 cartRoute.post("/add", (req, res) => {
@@ -190,6 +184,4 @@ cartRoute.delete("/delete", (req, res) => {
 })
 
 
-
-// Exporting product Route
 module.exports = { cartRoute };

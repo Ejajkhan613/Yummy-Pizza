@@ -1,34 +1,28 @@
-// Importing Modules
 const express = require("express");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// Salt Round for Password Encryption
 const saltRounds = 6;
 
 
-// Secret Key for Token Generation
-const secretKey = process.env.secret_key;
+const secretKey = process.env.SECRET_KEY;
 
 
-// Importing Custom Modules
 const { AdminModel } = require("../models/admin");
 const { check_admin_email } = require("../middlewares/adminEmalCheck");
 const { check_admin_username } = require("../middlewares/adminUsernameCheck");
 const { check_admin_mobile } = require("../middlewares/adminMobileCheck");
 
-// Separating Routes
 const adminRoute = express.Router();
 
 
-// Middlewares
 adminRoute.use(express.json());
 
 
 
 
-// For Users
+// User API's
 // Users Registration Route
 adminRoute.post("/register", check_admin_email, check_admin_username, check_admin_mobile, async (req, res) => {
     let { username, email, mobile, password, key } = req.body;
@@ -36,10 +30,8 @@ adminRoute.post("/register", check_admin_email, check_admin_username, check_admi
         if (key == secretKey) {
             bcrypt.hash(password, saltRounds, async (err, hashed_pass) => {
                 if (hashed_pass) {
-                    // Generating Token
                     var token = jwt.sign({ email, mobile, "password": hashed_pass }, secretKey, { expiresIn: '24h' });
 
-                    // Storing Data and sending response
                     let data = new AdminModel({ username, email, mobile, "password": hashed_pass });
                     await data.save();
                     res.send([{ "message": `registration successfull` }, { "username": username, "Access_Token": token }]);
@@ -65,10 +57,8 @@ adminRoute.post("/login", async (req, res) => {
 
             bcrypt.compare(password, check[0].password, async (err, result) => {
                 if (result) {
-                    // Generating Token
                     var token = jwt.sign({ email, "mobile": check[0].mobile, "password": check[0].password }, secretKey, { expiresIn: '24h' });
 
-                    // Sending Response
                     res.send([{ "message": `${check[0].username} is successfully logged in` }, { "username": check[0].username, "Access_Token": token }]);
                 } else {
                     res.send([{ "message": "Wrong Credentials" }]);
@@ -87,7 +77,7 @@ adminRoute.post("/login", async (req, res) => {
 
 
 
-// Only for Admin Purpose
+// Admin API's
 
 // GET All Admin Details
 adminRoute.get("/show", async (req, res) => {
@@ -178,5 +168,4 @@ adminRoute.delete("/delete", (req, res) => {
 })
 
 
-// Exporting adminRoute
 module.exports = { adminRoute };

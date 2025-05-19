@@ -1,24 +1,20 @@
-// Importing Modules
-const express = require("express"); // importing Express module
+const express = require("express");
 
-// Importing Custom Modules
-const { AdminModel } = require("../models/admin"); // importing AdminModel from admin.js module
+const { AdminModel } = require("../models/admin");
 
-// Middleware function to check if an admin with the given mobile number already exists in the database
 const check_admin_mobile = async (req, res, next) => {
-    let { mobile } = req.body; // getting mobile number from request body
+    let { mobile } = req.body;
     try {
-        let data = await AdminModel.find({ "mobile": mobile }); // finding if an admin with the given mobile number already exists in the database
-        if (data.length == 0) { // if no admin is found with the given mobile number, then proceed to the next middleware
+        let data = await AdminModel.find({ "mobile": mobile });
+        if (data.length == 0) {
             next();
         } else {
-            res.send([{ "message": `Mobile Number already registered Please Login` }]); // if an admin is found with the given mobile number, then send a response indicating that the mobile number is already registered
+            res.send([{ "message": `Mobile Number already registered Please Login` }]);
         }
 
     } catch (error) {
-        res.send([{ "message": "Something Went Wrong" }]); // if an error occurs while searching for the admin with the given mobile number, then send a response indicating that something went wrong
+        res.send([{ "message": "Something Went Wrong" }]);
     }
 };
 
-// Exporting Modules
-module.exports = { check_admin_mobile }; // exporting the check_admin_mobile middleware function for other modules to use
+module.exports = { check_admin_mobile };

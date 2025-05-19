@@ -1,30 +1,20 @@
-// Importing Modules
 const express = require("express");
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-
-// Salt Round for Password Encryption
 const saltRounds = 6;
 
+const secretKey = process.env.SECRET_KEY;
 
-// Secret Key for Token Generation
-const secretKey = process.env.secret_key;
-
-
-// Importing Custom Modules
 const { AdminModel } = require("../models/admin")
 const { UsersModel } = require("../models/users");
 const { check_user_email } = require("../middlewares/emailcheck.signup");
 const { check_user_username } = require("../middlewares/usernamecheck.signup");
 const { check_user_mobile } = require("../middlewares/mobilecheck.signup");
 
-// Separating Routes
 const userRoute = express.Router();
 
-
-// Middlewares
 userRoute.use(express.json());
 
 
@@ -52,7 +42,6 @@ userRoute.post("/register", check_user_email, check_user_username, check_user_mo
         res.send([{ "message": "Error while Registering" }]);
     }
 });
-
 
 // Users Login Route
 userRoute.post("/login", async (req, res) => {
@@ -82,16 +71,7 @@ userRoute.post("/login", async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-// Only for Admin Purpose
+// Admin API's
 
 // show User Detail
 userRoute.get("/admin/show", (req, res) => {
@@ -114,7 +94,6 @@ userRoute.get("/admin/show", (req, res) => {
 })
 
 
-
 // Find User Detail by ID
 userRoute.get("/admin/find", (req, res) => {
     let token = req.headers.authorization;
@@ -135,10 +114,6 @@ userRoute.get("/admin/find", (req, res) => {
         }
     });
 })
-
-
-
-
 
 
 // Update User Detail
@@ -186,5 +161,4 @@ userRoute.delete("/admin/delete", (req, res) => {
 });
 
 
-// Exporting userRoute
 module.exports = { userRoute };

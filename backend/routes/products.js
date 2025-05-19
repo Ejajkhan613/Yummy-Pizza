@@ -1,20 +1,15 @@
-// Importing Modules
 const express = require("express");
 var jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// Importing Custom Modules
 const { ProductModel } = require("../models/products");
 const { AdminModel } = require("../models/admin");
 
-// Separating Routes
 const productRoute = express.Router();
 
-// Secret key
-const secretKey = process.env.secret_key;
+const secretKey = process.env.SECRET_KEY;
 
 
-// Middlewares
 productRoute.use(express.json());
 
 
@@ -32,11 +27,7 @@ productRoute.get("/", async (req, res) => {
 
 
 
-
-
-
-
-// Only for Admin Purpose
+// Admin API's
 
 // Add new Product Details
 productRoute.get("/admin/find", async (req, res) => {
@@ -58,8 +49,6 @@ productRoute.get("/admin/find", async (req, res) => {
         }
     });
 })
-
-
 
 // Add new Product Details
 productRoute.post("/admin/add", async (req, res) => {
@@ -83,8 +72,6 @@ productRoute.post("/admin/add", async (req, res) => {
     });
 })
 
-
-
 // Show Product Details
 productRoute.get("/admin/show", async (req, res) => {
     let token = req.headers.authorization;
@@ -104,8 +91,6 @@ productRoute.get("/admin/show", async (req, res) => {
         }
     });
 })
-
-
 
 // Update Product Detail
 productRoute.patch("/admin/update", async (req, res) => {
@@ -127,8 +112,6 @@ productRoute.patch("/admin/update", async (req, res) => {
         }
     });
 })
-
-
 
 // delete Product Detail
 productRoute.delete("/admin/delete", async (req, res) => {
@@ -154,6 +137,4 @@ productRoute.delete("/admin/delete", async (req, res) => {
 })
 
 
-
-// Exporting product Route
 module.exports = { productRoute };

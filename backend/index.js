@@ -1,28 +1,23 @@
-// Importing required modules
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
 require('dotenv').config();
 
-// Importing Custom Modules
-const { connection } = require("./configs/db"); // Connection to MongoDB
-const { adminRoute } = require("./routes/admin"); // Admin Route
-const { addressRoute } = require("./routes/address"); // Address Route
-const { productRoute } = require("./routes/products"); // Products Route
-const { userRoute } = require("./routes/users"); // Users Route
-const { cartRoute } = require("./routes/cart"); // Cart Route
-const { discountRoute } = require("./routes/discounts"); // Discount Route
-const { orderRoute } = require("./routes/orderHistory"); // Order History Route
+const { connection } = require("./configs/db");
+const { adminRoute } = require("./routes/admin");
+const { addressRoute } = require("./routes/address");
+const { productRoute } = require("./routes/products");
+const { userRoute } = require("./routes/users");
+const { cartRoute } = require("./routes/cart");
+const { discountRoute } = require("./routes/discounts");
+const { orderRoute } = require("./routes/orderHistory");
 
 
-// Port number
-const port = process.env.port_no;
+const port = process.env.PORT;
 
-// Using express as app keyword
 const app = express();
 
-// Using Cors
 app.use(cors());
 
 
@@ -33,13 +28,11 @@ app.get("/", (req, res) => {
     res.send("Welcome to Yummy Pizza Store by Ejajul Ansari");
 });
 
-// Users Route Segregation
+// Users Route
 app.use("/users", userRoute);
 
 // Admin Route
 app.use("/admin", adminRoute);
-
-// Users Data Segregation
 
 // Address Route
 app.use("/address", addressRoute);
@@ -57,10 +50,20 @@ app.use("/discount", discountRoute);
 app.use("/orderHistory", orderRoute);
 
 
-// Starting server and connecting to the MongoDB
+// const https = require('https');
+
+// setInterval(() => {
+//   https.get('https://your-app.onrender.com', (res) => {
+//     console.log(`Self-ping status: ${res.statusCode}`);
+//   }).on('error', (err) => {
+//     console.error('Error with self-ping: ', err.message);
+//   });
+// }, 1000 * 60 * 3);
+
+
 app.listen(port, async (req, res) => {
     try {
-        await connection; // Waits for MongoDB connection
+        await connection;
         console.log("Connected to Database");
     } catch (error) {
         console.log("Error while connecting to Database");

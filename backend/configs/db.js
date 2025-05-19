@@ -1,9 +1,6 @@
-// Importing Modules
-const mongoose = require("mongoose"); // importing Mongoose module
-require('dotenv').config(); // importing dotenv module for environment variable management
+const mongoose = require("mongoose");
+require('dotenv').config();
 
-// Creating Connection from MongoDB
-const Connection = mongoose.connect(process.env.mongoDB_URL); // creating connection with MongoDB using Mongoose and MongoDB URL provided in environment variable
+const Connection = mongoose.connect(process.env.DB_URI);
 
-// Exporting Custom Module
-module.exports = { Connection }; // exporting Connection object for other modules to use
+module.exports = { Connection };
