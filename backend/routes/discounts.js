@@ -33,6 +33,17 @@ discountRoute.get("/", async (req, res) => {
     }
 });
 
+// Find All Discounts (User)
+discountRoute.get("/all", async (req, res) => {
+    try {
+        const discount = await DiscountModel.find();
+
+        res.status(200).json({ message: "Discounts list", discount });
+    } catch (error) {
+        res.status(500).json({ message: "Errors occured, Please try after some time", error: error.message });
+    }
+});
+
 
 
 // For Admin
@@ -47,7 +58,7 @@ discountRoute.post("/add", async (req, res) => {
                 if (decoded.mobile == data[0].mobile && decoded.password == data[0].password) {
                     let addDiscount = new DiscountModel({ "name": name, "price": price });
                     await addDiscount.save();
-                    res.send([{"message": "Discount Added"},addDiscount]);
+                    res.send([{ "message": "Discount Added" }, addDiscount]);
                 } else {
                     res.send([{ "message": "Not Authorized" }]);
                 }
