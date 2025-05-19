@@ -50,15 +50,15 @@ app.use("/discount", discountRoute);
 app.use("/orderHistory", orderRoute);
 
 
-// const https = require('https');
+const https = require('https');
 
-// setInterval(() => {
-//   https.get('https://your-app.onrender.com', (res) => {
-//     console.log(`Self-ping status: ${res.statusCode}`);
-//   }).on('error', (err) => {
-//     console.error('Error with self-ping: ', err.message);
-//   });
-// }, 1000 * 60 * 3);
+setInterval(() => {
+    https.get('https://pizzabackend-rdbu.onrender.com/', (res) => {
+        console.log(`Self-ping status: ${res.statusCode}`);
+    }).on('error', (err) => {
+        console.error('Error with self-ping: ', err.message);
+    });
+}, 1000 * 60);
 
 
 app.listen(port, async (req, res) => {
