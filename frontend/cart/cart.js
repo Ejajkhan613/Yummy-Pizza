@@ -23,7 +23,7 @@ async function showAddress() {
   let data = document.querySelector("#addressShow");
   let username = localStorage.getItem("username");
   try {
-    let gettingAddress = await fetch("https://nice-outfit-tuna.cyclic.app/address/get", {
+    let gettingAddress = await fetch("https://pizzabackend-rdbu.onrender.com/address/get", {
       method: "GET",
       headers: {
         "username": username
@@ -47,7 +47,7 @@ fetchData();
 async function fetchData() {
   let username = localStorage.getItem("username")
   try {
-    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/cart", {
+    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/cart", {
       method: "GET",
       headers: {
         "username": username
@@ -151,7 +151,7 @@ function getAsCard(imgSrc, price, title, description, size, category, id, userna
 // Quantity Addition or Subtraction function
 async function updateCart(currentQuantity, id, username) {
   try {
-    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/cart/update", {
+    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/cart/update", {
       method: "PATCH",
       headers: {
         "Content-type": "application/json"
@@ -175,7 +175,7 @@ document.querySelector("#offerBottom>button").addEventListener("click", async ()
     if (input.value == "") {
       alert("please apply coupon first")
     } else {
-      let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/discount", {
+      let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/discount", {
         method: "GET",
         headers: {
           "username": localStorage.getItem("username"),

@@ -25,7 +25,7 @@ if (localStorage.getItem("username") != null || localStorage.getItem("username")
 }
 async function fetchData() {
     try {
-        let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/orderHistory", {
+        let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/orderHistory", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

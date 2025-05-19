@@ -16,7 +16,7 @@ Project Code = star-theory-7179
 
 Project Name = Yummy Pizza
 
-Project Backend Link = https://nice-outfit-tuna.cyclic.app/
+Project Backend Link = https://pizzabackend-rdbu.onrender.com/
 
 Project Frontend Link = https://yummypizza-delivering-smile.netlify.app/
 

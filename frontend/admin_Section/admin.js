@@ -35,7 +35,7 @@ document.querySelector("#userDetails").addEventListener("click", fetchData);
 async function fetchData() {
     let token = sessionStorage.getItem("Access_Token");
     try {
-        let data = await fetch("https://nice-outfit-tuna.cyclic.app/users/admin/show", {
+        let data = await fetch("https://pizzabackend-rdbu.onrender.com/users/admin/show", {
             method: "GET",
             headers: {
                 "Authorization": token
@@ -74,7 +74,7 @@ document.querySelector("#adminDetails").addEventListener("click", fetchAdminData
 async function fetchAdminData() {
     let token = sessionStorage.getItem("Access_Token");
     try {
-        let data = await fetch("https://nice-outfit-tuna.cyclic.app/admin/show", {
+        let data = await fetch("https://pizzabackend-rdbu.onrender.com/admin/show", {
             method: "GET",
             headers: {
                 "Authorization": token
@@ -181,7 +181,7 @@ function renderCardList(data, forAdmin) {
 
                 if (forAdmin == undefined) {
 
-                    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/users/admin/find", {
+                    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/users/admin/find", {
                         method: "GET",
                         headers: {
                             "authorization": token,
@@ -220,7 +220,7 @@ function renderCardList(data, forAdmin) {
 
                 } else {
 
-                    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/admin/find", {
+                    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/admin/find", {
                         method: "GET",
                         headers: {
                             "authorization": token,
@@ -283,8 +283,6 @@ function getAsCard(id, username, email, mobile, password) {
             <p>${email}</p><br>
             <span for="">MOBILE  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <p>${mobile}</p><br>
-            <span for="">PASSWORD  &nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <p>${password.substring(0, 30)}</p>
           </div>
           <div class="buttonsArea">
             <button id="editUserDetails" data-id=${id}>Edit</button>
@@ -306,7 +304,7 @@ async function deleteFunction(data, forAdmin) {
 
         if (forAdmin == "admin") {
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/admin/delete", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/admin/delete", {
                 method: "DELETE",
                 headers: {
                     "authorization": token,
@@ -319,7 +317,7 @@ async function deleteFunction(data, forAdmin) {
 
         } else {
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/users/admin/delete", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/users/admin/delete", {
                 method: "DELETE",
                 headers: {
                     "authorization": token,
@@ -364,7 +362,7 @@ document.getElementById("savebutton").addEventListener("click", async () => {
                 "mobile": mobile.value
             }
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/users/admin/update", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/users/admin/update", {
                 method: "PATCH",
                 headers: {
                     "Content-type": "application/json",
@@ -428,7 +426,7 @@ document.getElementById("adminsavebutton").addEventListener("click", async () =>
                 "mobile": mobile.value
             }
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/admin/update", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/admin/update", {
                 method: "PATCH",
                 headers: {
                     "Content-type": "application/json",
@@ -507,7 +505,7 @@ document.getElementById("add_user_save_button").addEventListener("click", async 
                 "password": password.value
             }
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/users/register", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/users/register", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -590,7 +588,7 @@ document.getElementById("discountbutton").addEventListener("click", async () => 
                 "price": price.value
             }
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/discount/add", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/discount/add", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -682,7 +680,7 @@ document.getElementById("add_product_save_button").addEventListener("click", asy
                 "category": category.value
             }
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/products/admin/add", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/products/admin/add", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -775,7 +773,7 @@ document.getElementById("add_admin_save_button").addEventListener("click", async
                 "key": key.value
             }
 
-            let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/admin/register", {
+            let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/admin/register", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -826,7 +824,7 @@ document.querySelector("#orderHistory").addEventListener("click", fetchOrderHist
 async function fetchOrderHistory() {
     let token = sessionStorage.getItem("Access_Token");
     try {
-        let data = await fetch("https://nice-outfit-tuna.cyclic.app/orderHistory/admin/get", {
+        let data = await fetch("https://pizzabackend-rdbu.onrender.com/orderHistory/admin/get", {
             method: "GET",
             headers: {
                 "Authorization": token
@@ -948,7 +946,7 @@ document.querySelector("#showAllProducts").addEventListener("click", fetchProduc
 async function fetchProductData() {
     let token = sessionStorage.getItem("Access_Token");
     try {
-        let data = await fetch("https://nice-outfit-tuna.cyclic.app/products/admin/show", {
+        let data = await fetch("https://pizzabackend-rdbu.onrender.com/products/admin/show", {
             method: "GET",
             headers: {
                 "authorization": token
@@ -982,7 +980,7 @@ document.querySelector("#select_category").addEventListener("change", async () =
     try {
 
         if (cat == "all") {
-            let data = await fetch("https://nice-outfit-tuna.cyclic.app/products/admin/show", {
+            let data = await fetch("https://pizzabackend-rdbu.onrender.com/products/admin/show", {
                 method: "GET",
                 headers: {
                     "authorization": token
@@ -1005,7 +1003,7 @@ document.querySelector("#select_category").addEventListener("change", async () =
             document.getElementById("showProducts").style.display = "block";
             renderProductList(res);
         } else {
-            let data = await fetch("https://nice-outfit-tuna.cyclic.app/products/admin/find", {
+            let data = await fetch("https://pizzabackend-rdbu.onrender.com/products/admin/find", {
                 method: "GET",
                 headers: {
                     "authorization": token,
@@ -1111,7 +1109,7 @@ function getAsProductCard(id, category, description, image, name, price, size) {
 async function deleteProduct(data) {
     let token = sessionStorage.getItem("Access_Token");
     try {
-        let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/products/admin/delete", {
+        let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/products/admin/delete", {
             method: "DELETE",
             headers: {
                 "authorization": token,
@@ -1129,7 +1127,7 @@ async function deleteProduct(data) {
 async function showProductAfterDelete() {
     let token = sessionStorage.getItem("Access_Token");
     try {
-        let data = await fetch("https://nice-outfit-tuna.cyclic.app/products/admin/show", {
+        let data = await fetch("https://pizzabackend-rdbu.onrender.com/products/admin/show", {
             method: "GET",
             headers: {
                 "authorization": token

@@ -22,7 +22,7 @@ async function showAddress() {
   let data = document.querySelector("#textAddress");
   let username = localStorage.getItem("username");
   try {
-    let gettingAddress = await fetch("https://nice-outfit-tuna.cyclic.app/address/get", {
+    let gettingAddress = await fetch("https://pizzabackend-rdbu.onrender.com/address/get", {
       method: "GET",
       headers: {
         "username": username
@@ -68,7 +68,7 @@ showUsername();
 fetchData();
 async function fetchData() {
   try {
-    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/products?category=best_sellers")
+    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/products?category=best_sellers")
     let data = await fetching.json();
     document.getElementById("LoadingDataDiv").style.display = "none";
     renderCardList(data);
@@ -138,7 +138,7 @@ function getAsCard(imgSrc, price, title, description, size, category, id) {
 // Add to Cart function
 async function addtocartFunc(username, id) {
   try {
-    let fetching = await fetch("https://nice-outfit-tuna.cyclic.app/cart/add", {
+    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/cart/add", {
       method: "POST",
       headers: {
         "Content-type": "application/json"

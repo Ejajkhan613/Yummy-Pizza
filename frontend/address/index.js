@@ -24,7 +24,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
 
 
-                let sending = await fetch("https://nice-outfit-tuna.cyclic.app/address/add", {
+                let sending = await fetch("https://pizzabackend-rdbu.onrender.com/address/add", {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json"
