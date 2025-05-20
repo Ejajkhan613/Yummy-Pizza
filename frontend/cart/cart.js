@@ -184,7 +184,6 @@ document.querySelector("#offerBottom>button").addEventListener("click", async ()
       });
       let res = await fetching.json();
       if (res.length == 2) {
-        console.log(res)
         sessionStorage.setItem("discount", +(res[1][0].price));
         fetchData();
         alert(res[0].message);
@@ -204,23 +203,25 @@ document.querySelector("#offerBottom>button").addEventListener("click", async ()
 
 // Rendering Total Price
 function renderPrice(data) {
-  let total = document.querySelector("#subtotal>span>span");
-  let grandTotal = document.querySelector("#total>span>span");
-  let taxes = document.querySelector("#taxes>span>span");
-  let discountApplied = sessionStorage.getItem("discount") || 0;
-  let discount = document.querySelector("#discounts>span>span");
+  const subtotalElem = document.querySelector("#subtotal>span>span");
+  const grandTotalElem = document.querySelector("#total>span>span");
+  const taxElem = document.querySelector("#taxes>span>span");
+  const discountElem = document.querySelector("#discounts>span>span");
 
-  let calculateSubtotal = 0;
-  for (let a = 0; a < data.length; a++) {
-    calculateSubtotal = calculateSubtotal + (data[a].price * data[a].quantity);
-  }
-  calculateSubtotal = calculateSubtotal - (+discountApplied);
-  let allTax = (calculateSubtotal + (calculateSubtotal * (18 / 100))) - calculateSubtotal;
-  discount.innerText = +discountApplied;
-  total.innerText = calculateSubtotal.toFixed(2);
-  taxes.innerText = allTax.toFixed(2);
-  grandTotal.innerText = (calculateSubtotal + (calculateSubtotal * (18 / 100))).toFixed(2);
+  const discount = parseFloat(sessionStorage.getItem("discount")) || 0;
+
+  let subtotal = data.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  let discountedSubtotal = subtotal - discount;
+  let tax = discountedSubtotal * 0.18;
+  let grandTotal = discountedSubtotal + tax;
+  console.log(subtotal, discountedSubtotal, tax, grandTotal);
+
+  subtotalElem.innerText = subtotal.toFixed(2);
+  discountElem.innerText = discount.toFixed(2);
+  taxElem.innerText = tax.toFixed(2);
+  grandTotalElem.innerText = grandTotal.toFixed(2);
 }
+
 
 
 

@@ -121,7 +121,7 @@ body {
 
 /* Main Body */
 #products {
-    width: 90%;
+    width: 60%;
     margin-left: 50px;
 }
 
@@ -195,7 +195,7 @@ body {
 /* Show History Section */
 
 .renderArea {
-    width: 80%;
+    width: 50%;
 }
 
 
@@ -212,21 +212,20 @@ body {
     height: 300px;
 }
 
-
-
-
-.individualItem {
-    height: fit-content;
-    width: 98%;
-    border: 3px solid #0066A7;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px 10px;
-    background-color: white;
+#showLogo>p {
+    font-size: 25px;
+    text-align: center;
+    color: #0066A7;
+    font-weight: 600;
 }
+
+#showNoDiscounts {
+    display: none;
+}
+
+
+
+
 
 .ind_item_box {
     border: 3px solid #0066A7;
@@ -237,63 +236,27 @@ body {
     background-color: white;
 }
 
-.textArea > p {
+.textArea>p {
     display: inline-flex;
     color: #0066A7;
     font-weight: 600;
 }
 
 
-.leftside {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.imgSec {
-    width: fit-content;
-    height: fit-content;
-}
-
-.imgSec>img {
-    width: 110px;
-}
 
 
-.description {
-    width: 300px;
-    margin-left: 12px;
-}
 
-.description>h4 {
-    font-size: 15px;
-    margin: 0px;
-    margin-bottom: 5px;
-}
-
-.description>p {
-    margin: 0px;
-    font-size: 10px;
-}
-
-.sizeofitem {
-    margin: 0px;
-    margin-top: 10px;
+#copyButton {
+    padding: 5px 10px;
+    border: 2px solid green;
+    background-color: #00AB00;
+    color: white;
     font-weight: 600;
-    font-size: 14px;
+    border-radius: 4px;
 }
 
-.rightside>p {
-    text-align: center;
-    font-weight: 600;
-    color: #0066A7;
-    display: inline-flex;
-    margin: 3px;
-}
-
-.rightside >span {
-    display: inline-flex;
-    font-size: 14px;
+#copyButton:hover {
+    background-color: #06ce06;
 }
 
 

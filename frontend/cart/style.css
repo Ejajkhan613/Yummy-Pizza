@@ -22,7 +22,7 @@ body {
     margin-left: 40px;
 }
 
-#img>img {
+#img>a>img {
     width: 50px;
 }
 

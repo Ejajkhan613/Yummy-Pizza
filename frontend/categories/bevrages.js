@@ -120,7 +120,7 @@ function getAsCard(imgSrc, price, title, description, category, id) {
     <div class="item-bottom-text">
       <p> &#8377 ${price}</p>
       <h4>${title}</h4>
-      <p class="desc">${description.substring(0, 100) + "..."}</p>
+      <p class="desc">${description.substring(0, 60) + "..."}</p>
       <hr>
       <br>
       <br>

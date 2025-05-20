@@ -68,7 +68,7 @@ showUsername();
 fetchData();
 async function fetchData() {
   try {
-    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/products?category=best_sellers")
+    let fetching = await fetch("https://pizzabackend-rdbu.onrender.com/products?category=chicken_feast")
     let data = await fetching.json();
     document.getElementById("LoadingDataDiv").style.display = "none";
     renderCardList(data);
@@ -89,10 +89,9 @@ function renderCardList(data) {
         let price = item.price;
         let title = item.name;
         let description = item.description;
-        let size = item.size;
         let category = item.category;
         let id = item._id;
-        return getAsCard(imgSrc, price, title, description, size, category, id);
+        return getAsCard(imgSrc, price, title, description, category, id);
       })
       .join("")}
       </div>
@@ -112,7 +111,7 @@ function renderCardList(data) {
 
 
 // Making Individual Product Cards
-function getAsCard(imgSrc, price, title, description, size, category, id) {
+function getAsCard(imgSrc, price, title, description, category, id) {
   return `
     <div class="ind-item">
     <div class="item-top-img">
@@ -121,11 +120,8 @@ function getAsCard(imgSrc, price, title, description, size, category, id) {
     <div class="item-bottom-text">
       <p> &#8377 ${price}</p>
       <h4>${title}</h4>
-      <p class="desc">${description.substring(0, 100) + "..."}</p>
+      <p class="desc">${description.substring(0, 60) + "..."}</p>
       <hr>
-      <span>Size</span>
-      <br>
-      <span class="showSize">${size}</span>
       <button class="addtoCart" data-category=${category} data-id=${id}>ADD TO CART</button>
     </div>
   </div>
