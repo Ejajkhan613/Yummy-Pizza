@@ -28,6 +28,16 @@ app.get("/", (req, res) => {
     res.send("Welcome to Yummy Pizza Store by Ejajul Ansari");
 });
 
+// GET request for Ping 1 (Render)
+app.get("/ping1", (req, res) => {
+    res.send("Ping 1");
+});
+
+// GET request for Ping 2 (Render)
+app.get("/ping2", (req, res) => {
+    res.send("Ping 2");
+});
+
 // Users Route
 app.use("/users", userRoute);
 
@@ -53,12 +63,20 @@ app.use("/orderHistory", orderRoute);
 const https = require('https');
 
 setInterval(() => {
-    https.get('https://pizzabackend-rdbu.onrender.com/', (res) => {
-        console.log(`Self-ping status: ${res.statusCode}`);
+    https.get('https://pizzabackend-rdbu.onrender.com/ping1', (res) => {
+        console.log(`Self-ping 1 status: ${res.statusCode}`);
     }).on('error', (err) => {
         console.error('Error with self-ping: ', err.message);
     });
-}, 1000 * 60);
+}, 1000 * 90);
+
+setInterval(() => {
+    https.get('https://pizzabackend-rdbu.onrender.com/ping2', (res) => {
+        console.log(`Self-ping 2 status: ${res.statusCode}`);
+    }).on('error', (err) => {
+        console.error('Error with self-ping: ', err.message);
+    });
+}, 1000 * 120);
 
 
 app.listen(port, async (req, res) => {
